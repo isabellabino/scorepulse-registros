@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ScorePulse · 28/10/2026 · Contestação aceita sai do Score</title>
+<style>
+  :root{
+    --navy:#00143D; --coral:#FC6058; --azul:#0055FF;
+    --bg:#EFF3FB; --surf:#fff; --line:#E2E6F0; --ink:#2E2E2E; --mute:#7C7C7C;
+    --verde:#249555; --ambar:#D88800;
+    --tint-verde:#E6F4EC; --tint-ambar:#FBF1DC; --tint-coral:#FEE9E6; --tint-azul:#E6EEFF;
+    --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s6:24px; --s8:32px; --s12:48px; --s16:64px;
+    --r:8px; --r2:12px;
+  }
+  *{box-sizing:border-box}
+  html{background:var(--bg)}
+  body{margin:0;font-family:"Seazone Helvetica",Helvetica,"Helvetica Neue",Arial,sans-serif;color:var(--ink);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+  a{color:var(--azul);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .num{font-variant-numeric:tabular-nums}
+  .page{max-width:1040px;margin:0 auto;padding:var(--s8) var(--s6) var(--s16)}
+
+  header{display:grid;grid-template-columns:1fr auto;gap:var(--s6);align-items:end;padding-bottom:var(--s6);border-bottom:1px solid var(--line);animation:up .5s cubic-bezier(.22,1,.36,1) both}
+  .kicker{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin:0 0 var(--s2)}
+  h1{font-size:clamp(26px,3.2vw,36px);line-height:1.12;margin:0;color:var(--navy);font-weight:700;letter-spacing:-.01em;max-width:22ch}
+  .meta{display:flex;flex-direction:column;gap:var(--s1);text-align:right;font-size:13px;color:var(--mute)}
+  .meta strong{color:var(--navy);font-weight:600}
+  .pill{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:999px;font-size:12px;font-weight:600;background:var(--tint-verde);color:var(--verde);align-self:flex-end}
+  .pill::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+
+  section{padding:var(--s8) 0;border-bottom:1px solid var(--line);animation:up .6s cubic-bezier(.22,1,.36,1) both}
+  section:nth-of-type(2){animation-delay:.06s}section:nth-of-type(3){animation-delay:.12s}section:nth-of-type(4){animation-delay:.18s}section:nth-of-type(5){animation-delay:.24s}
+  section:last-of-type{border-bottom:0}
+  h2{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin:0 0 var(--s4);font-weight:600}
+  h2 span{color:var(--coral);margin-right:var(--s2)}
+  p{margin:0;max-width:70ch}
+  .lead{font-size:18px;line-height:1.45;color:var(--navy);max-width:60ch}
+  .lead b{font-weight:700}
+  .two{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:var(--s12)}
+  .src{font-size:12px;color:var(--mute);margin-top:var(--s3)}
+
+  ol.flow{list-style:none;margin:0;padding:0;counter-reset:n;display:grid;gap:var(--s3)}
+  ol.flow li{display:grid;grid-template-columns:28px 1fr;gap:var(--s3);align-items:start;counter-increment:n}
+  ol.flow li::before{content:counter(n);width:28px;height:28px;border-radius:50%;background:var(--navy);color:#F4F6FB;font-size:12px;font-weight:700;display:grid;place-items:center;font-variant-numeric:tabular-nums}
+  ol.flow li b{color:var(--navy);font-weight:600}
+  code{font-family:inherit;font-size:.93em;background:var(--tint-azul);color:var(--navy);padding:1px 6px;border-radius:4px;font-weight:500}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:var(--r2);background:var(--surf);overflow:hidden}
+  .stat{padding:var(--s4) var(--s6);border-right:1px solid var(--line)}
+  .stat:last-child{border-right:0}
+  .stat .v{font-size:40px;font-weight:700;color:var(--navy);line-height:1;letter-spacing:-.02em}
+  .stat .l{font-size:13px;color:var(--ink);margin-top:var(--s2)}
+  .stat .d{font-size:12px;color:var(--mute)}
+  .stat.hi .v{color:var(--coral)}
+  table{width:100%;border-collapse:collapse;margin-top:var(--s6);font-size:14px;background:var(--surf);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+  th{text-align:left;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--mute);font-weight:600;padding:var(--s2) var(--s3);border-bottom:1px solid var(--line)}
+  td{padding:var(--s3);border-bottom:1px solid var(--line);vertical-align:top}
+  th.r,td.r{text-align:right;font-variant-numeric:tabular-nums}
+  tr:last-child td{border-bottom:0}
+  td.ok{color:var(--verde);font-weight:600}
+  td.warn{color:#9A6100;font-weight:600}
+  .wrap{overflow-x:auto}
+
+  .tl{list-style:none;margin:0;padding:0}
+  .tl li{display:grid;grid-template-columns:64px 72px 1fr;gap:var(--s4);padding:var(--s3) 0;border-bottom:1px dashed var(--line);align-items:baseline}
+  .tl li:last-child{border-bottom:0}
+  .tl .t{font-variant-numeric:tabular-nums;color:var(--navy);font-weight:600}
+  .tl .h{font-size:12px;color:var(--mute);font-variant-numeric:tabular-nums}
+  .tag{display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;border-radius:999px;margin-left:var(--s2);vertical-align:middle;white-space:nowrap}
+  .tag.red{background:var(--tint-coral);color:#B83A27}.tag.grn{background:var(--tint-verde);color:var(--verde)}.tag.amb{background:var(--tint-ambar);color:#9A6100}.tag.blu{background:var(--tint-azul);color:var(--azul)}
+
+  .risk{display:grid;gap:var(--s3)}
+  .risk div{display:grid;grid-template-columns:auto 1fr;gap:var(--s3);padding:var(--s3) var(--s4);border-radius:var(--r);background:var(--tint-ambar)}
+  .risk div.c{background:var(--tint-coral)}
+  .risk .k{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#9A6100;padding-top:3px;white-space:nowrap}
+  .risk div.c .k{color:#B83A27}
+
+  footer{padding-top:var(--s6);font-size:12px;color:var(--mute);display:flex;justify-content:space-between;gap:var(--s4);flex-wrap:wrap}
+
+  @keyframes up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){header,section{animation:none}}
+  @media (max-width:760px){
+    header{grid-template-columns:1fr}.meta{text-align:left}.pill{align-self:flex-start}
+    .two{grid-template-columns:1fr;gap:var(--s6)}
+    .stats{grid-template-columns:1fr 1fr}.stat{border-bottom:1px solid var(--line)}.stat:nth-child(2n){border-right:0}.stat:nth-last-child(-n+2){border-bottom:0}
+    .tl li{grid-template-columns:56px 1fr}.tl .h{display:none}
+    .page{padding:var(--s6) var(--s4) var(--s12)}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <div>
+    <p class="kicker">ScorePulse · registro do dia · 28/10/2026</p>
+    <h1>Avaliação com contestação aceita sai do Score</h1>
+  </div>
+  <div class="meta">
+    <span class="pill">No ar desde 28/10 17h10</span>
+    <span><strong><a href="https://github.com/seazone-tech/seazone-score-pulse-5adcc460/pull/26">PR #26</a></strong> · seazone-score-pulse</span>
+    <span>Autora: Isabella Bino · 7 commits · 2 arquivos · +285 −26</span>
+    <span>Regra: David Soares (DM, 28/10/2026)</span>
+  </div>
+</header>
+
+<section>
+  <h2><span>01</span>O que mudou</h2>
+  <p class="lead">Avaliação do Airbnb cuja contestação foi <b>aceita e removida pela plataforma</b> deixa de contar no Score. O sincronismo de avaliações passou a ler essa marcação na gold da Nekt, ignorar a avaliação na entrada e apagar a que já tinha entrado.</p>
+  <p class="src">Arquivos: <code>supabase/functions/sync-reviews/index.ts</code> e <code>CLAUDE.md</code> (regra documentada no projeto).</p>
+</section>
+
+<section>
+  <div class="two">
+    <div>
+      <h2><span>02</span>Como funciona o sync agora</h2>
+      <ol class="flow">
+        <li><div><b>Lê a gold da Nekt</b> <code>reviews_airbnb_ajustada</code> e separa as linhas com <code>contestacao_aceita = true</code>.</div></li>
+        <li><div><b>Ignora na entrada</b>: a avaliação contestada não entra em <code>guest_reviews</code>.</div></li>
+        <li><div><b>Apaga do banco</b> as que já tinham sido sincronizadas em dias anteriores.</div></li>
+        <li><div><b>Registra o hash</b> em <code>guest_reviews_excluded</code> com motivo <code>contestacao_aceita</code>, o mesmo mecanismo da retirada manual. O próximo sync não reinsere.</div></li>
+        <li><div><b>Recalcula os indicadores mensais</b> (<code>property_monthly_issues</code>) de cada imóvel × mês afetado.</div></li>
+        <li><div><b>Resposta só com contagens</b>; o detalhe (imóvel, hóspede, data) fica em <code>sync_logs.details</code>, lido só por admin e consultor.</div></li>
+        <li><div><b>Simulação</b>: <code>{ "dry_run": true }</code> conta e não grava.</div></li>
+      </ol>
+      <p class="src">Chave de vínculo entre as fontes: imóvel + data da avaliação + hóspede, canal Airbnb.</p>
+    </div>
+    <div>
+      <h2><span>03</span>Cadeia de dados</h2>
+      <ol class="flow">
+        <li><div><b>App de contestações</b> (Lovable) → bronze <code>contestacoes_pedidos</code>, 3 snapshots por dia (8h, 13h, 23h).</div></li>
+        <li><div><b>Silver</b> fica só com Aceito/Negado e <b>exige o número da reserva</b> (código HM…).</div></li>
+        <li><div><b>Gold</b> liga pela reserva e marca <code>contestacao_aceita</code>. É a mesma base do Score mensal.</div></li>
+        <li><div><b>ScorePulse</b> lê a gold e aplica a regra ao lado.</div></li>
+      </ol>
+      <p class="src">Levantado em 28/10/2026 nos notebooks e queries da Nekt.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2><span>04</span>Resultado no ar</h2>
+  <div class="stats">
+    <div class="stat"><div class="v num">213</div><div class="l">contestadas na fonte</div><div class="d">gold Nekt</div></div>
+    <div class="stat"><div class="v num">92</div><div class="l">ignoradas na entrada</div><div class="d">não entraram</div></div>
+    <div class="stat hi"><div class="v num">96</div><div class="l">removidas do banco</div><div class="d">guest_reviews</div></div>
+    <div class="stat"><div class="v num">96</div><div class="l">indicadores recalculados</div><div class="d">imóvel × mês</div></div>
+  </div>
+  <p class="src">Fonte: <code>sync_logs</code> do ScorePulse, sync de avaliações de 28/10/2026 às 17h13 BRT (primeira rodada com a regra publicada).</p>
+
+  <div class="wrap">
+  <table>
+    <thead><tr><th>Sync de avaliações</th><th>Versão da function</th><th class="r">Na fonte</th><th class="r">Ignoradas</th><th class="r">Removidas</th><th>Leitura</th></tr></thead>
+    <tbody>
+      <tr><td>28/10 · 13h41</td><td>antiga</td><td class="r">—</td><td class="r">—</td><td class="r">—</td><td class="warn">merge não publicou a function</td></tr>
+      <tr><td>28/10 · 17h13</td><td>nova (publicada ~17h10 via Lovable)</td><td class="r">213</td><td class="r">92</td><td class="r">96</td><td class="ok">regra aplicada</td></tr>
+      <tr><td>29/10 · 06h30</td><td>nova</td><td class="r">213</td><td class="r">0</td><td class="r">0</td><td class="ok">base já limpa</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="src">Caso de validação: imóvel ETC0017 (avaliação de 29/09/2026) saiu do Score no sync das 17h13.</p>
+</section>
+
+<section>
+  <div class="two">
+    <div>
+      <h2><span>05</span>Linha do tempo do PR</h2>
+      <ul class="tl">
+        <li><span class="t">10h28</span><span class="h">0294097</span><span>Regra implementada no sync-reviews + CLAUDE.md <span class="tag red">Alfred: 1 crítico</span></span></li>
+        <li><span class="t">10h48</span><span class="h">4b49a62</span><span>Recalcula indicadores mensais após apagar contestadas <span class="tag red">Alfred: 1 crítico</span></span></li>
+        <li><span class="t">11h02</span><span class="h">6aa0d8a</span><span>Resposta do sync sem detalhe das avaliações (dados sob RLS) <span class="tag grn">pode mergear</span></span></li>
+        <li><span class="t">11h20</span><span class="h">1f9d573</span><span>Merge da main: integra à retirada manual (<code>guest_reviews_excluded</code>) <span class="tag amb">1 aviso</span></span></li>
+        <li><span class="t">11h38</span><span class="h">384df9f</span><span>Merge na main <span class="tag blu">nota 7,0</span></span></li>
+        <li><span class="t">~17h10</span><span class="h">Lovable</span><span>Edge function publicada; sync das 17h13 roda com a regra</span></li>
+      </ul>
+      <p class="src">Fonte: git log e comentários do Alfred no PR #26. Revisão automática em 5 rodadas; dois críticos corrigidos antes do merge.</p>
+    </div>
+    <div>
+      <h2><span>06</span>Pendências e riscos</h2>
+      <div class="risk">
+        <div class="c"><span class="k">dado</span><span>Contestação aceita <b>sem número de reserva</b> no app não chega na gold e não sai do Score. Card 28c5349f aberto para a Vic ajustar o pedido do ETC0017.</span></div>
+        <div><span class="k">aviso</span><span>Alfred: se a data da avaliação divergir entre silver e gold, a chave imóvel + data + hóspede não casa. Não ocorreu na base validada; monitorar.</span></div>
+        <div><span class="k">deploy</span><span>Merge na main não publica a function sozinho. Depois de mexer em edge function, conferir no <code>sync_logs</code> se os campos <code>contestadas_*</code> aparecem antes de prometer prazo.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>Seazone · Backoffice de Franquias · Isabella Bino</span>
+  <span>Gerado em 29/10/2026 a partir do GitHub (PR #26), sync_logs do ScorePulse e levantamento da Nekt de 28/10.</span>
+</footer>
+
+</div>
+</body>
+</html>
