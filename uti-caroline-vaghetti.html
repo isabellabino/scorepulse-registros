@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UTI de Franquias · Caroline Sorondo Vaghetti · situação em 04/11/2026</title>
+<style>
+  :root{
+    --navy:#00143D; --coral:#FC6058; --azul:#0055FF;
+    --bg:#EFF3FB; --surf:#fff; --line:#E2E6F0; --ink:#2E2E2E; --mute:#7C7C7C;
+    --verde:#249555; --ambar:#D88800;
+    --tint-verde:#E6F4EC; --tint-ambar:#FBF1DC; --tint-coral:#FEE9E6; --tint-azul:#E6EEFF;
+    --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s6:24px; --s8:32px; --s12:48px; --s16:64px;
+    --r:8px; --r2:12px;
+  }
+  *{box-sizing:border-box}
+  html{background:var(--bg)}
+  body{margin:0;font-family:"Seazone Helvetica",Helvetica,"Helvetica Neue",Arial,sans-serif;color:var(--ink);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+  a{color:var(--azul);text-decoration:none}a:hover{text-decoration:underline}
+  .page{max-width:960px;margin:0 auto;padding:var(--s8) var(--s6) var(--s16)}
+
+  header{display:grid;grid-template-columns:1fr auto;gap:var(--s6);align-items:end;padding-bottom:var(--s6);border-bottom:1px solid var(--line);animation:up .5s cubic-bezier(.22,1,.36,1) both}
+  .kicker{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin:0 0 var(--s2)}
+  h1{font-size:clamp(26px,3.2vw,36px);line-height:1.12;margin:0;color:var(--navy);font-weight:700;letter-spacing:-.01em;max-width:22ch}
+  .meta{display:flex;flex-direction:column;gap:var(--s1);text-align:right;font-size:13px;color:var(--mute)}
+  .meta strong{color:var(--navy);font-weight:600}
+  .pill{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:999px;font-size:12px;font-weight:600;background:var(--tint-verde);color:var(--verde);align-self:flex-end;margin-top:var(--s2)}
+  .pill::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+
+  section{padding:var(--s8) 0;border-bottom:1px solid var(--line);animation:up .6s cubic-bezier(.22,1,.36,1) both}
+  section:nth-of-type(2){animation-delay:.06s}section:nth-of-type(3){animation-delay:.12s}section:nth-of-type(4){animation-delay:.18s}
+  section:last-of-type{border-bottom:0}
+  h2{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin:0 0 var(--s4);font-weight:600}
+  h2 span{color:var(--coral);margin-right:var(--s2)}
+  p{margin:0;max-width:70ch}
+  .lead{font-size:18px;line-height:1.45;color:var(--navy);max-width:60ch}
+  .lead b{font-weight:700}
+  .src{font-size:12px;color:var(--mute);margin-top:var(--s3)}
+
+  .tl{list-style:none;margin:0;padding:0}
+  .tl li{display:grid;grid-template-columns:64px 1fr;gap:var(--s4);padding:var(--s3) 0;border-bottom:1px dashed var(--line);align-items:baseline}
+  .tl li:last-child{border-bottom:0}
+  .tl .t{font-variant-numeric:tabular-nums;color:var(--navy);font-weight:600}
+  .tl b{color:var(--navy);font-weight:600}
+  .tag{display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;border-radius:999px;margin-left:var(--s2);vertical-align:middle;white-space:nowrap}
+  .tag.grn{background:var(--tint-verde);color:var(--verde)}.tag.amb{background:var(--tint-ambar);color:#9A6100}.tag.blu{background:var(--tint-azul);color:var(--azul)}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:var(--r2);background:var(--surf);overflow:hidden}
+  .stat{padding:var(--s4) var(--s6);border-right:1px solid var(--line)}
+  .stat:last-child{border-right:0}
+  .stat .v{font-size:40px;font-weight:700;color:var(--navy);line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+  .stat .v small{font-size:16px;font-weight:600;color:var(--mute);letter-spacing:0;margin-left:2px}
+  .stat .l{font-size:13px;color:var(--ink);margin-top:var(--s2)}
+  .stat .d{font-size:12px;color:var(--mute)}
+  .stat.ok .v{color:var(--verde)}
+
+  table{width:100%;border-collapse:collapse;margin-top:var(--s6);font-size:14px;background:var(--surf);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+  th{text-align:left;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--mute);font-weight:600;padding:var(--s2) var(--s3);border-bottom:1px solid var(--line)}
+  td{padding:var(--s3);border-bottom:1px solid var(--line);vertical-align:top}
+  th.r,td.r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  tr:last-child td{border-bottom:0}
+  td.warn{color:#9A6100;font-weight:600}
+  .wrap{overflow-x:auto}
+
+  ul.plain{margin:0;padding:0 0 0 18px;display:grid;gap:var(--s2);max-width:70ch}
+  ul.plain b{color:var(--navy);font-weight:600}
+  .note{padding:var(--s3) var(--s4);border-radius:var(--r);background:var(--tint-azul);color:var(--navy);max-width:70ch;margin-top:var(--s4)}
+
+  footer{padding-top:var(--s6);font-size:12px;color:var(--mute);display:flex;justify-content:space-between;gap:var(--s4);flex-wrap:wrap}
+
+  @keyframes up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){header,section{animation:none}}
+  @media (max-width:760px){
+    header{grid-template-columns:1fr}.meta{text-align:left}.pill{align-self:flex-start}
+    .stats{grid-template-columns:1fr 1fr}.stat{border-bottom:1px solid var(--line)}.stat:nth-child(2n){border-right:0}.stat:nth-last-child(-n+2){border-bottom:0}
+    .tl li{grid-template-columns:56px 1fr}
+    .page{padding:var(--s6) var(--s4) var(--s12)}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <div>
+    <p class="kicker">UTI de Franquias · Central da UTI · situação em 04/11/2026</p>
+    <h1>Caroline Sorondo Vaghetti está fora da UTI</h1>
+  </div>
+  <div class="meta">
+    <span>Franquia <strong>FLN-004-CAM</strong> · 50 imóveis ativos</span>
+    <span>Caso 644 da Central · aberto 13/10, encerrado 23/10/2026</span>
+    <span class="pill">Fora da UTI desde 23/10/2026</span>
+  </div>
+</header>
+
+<section>
+  <h2><span>01</span>Resumo</h2>
+  <p class="lead">Ela <b>nunca entrou na UTI</b>. Passou só pela Pré-UTI automática, de 13 a 21/10, por <b>2 ocorrências gravíssimas em 90 dias</b>. Não entregou o plano de ocorrências no prazo, a Vivianny decidiu não levá-la à UTI na primeira rodada e, em 23/10, o alerta saiu dos dados. Hoje <b>não há alerta ativo</b> na régua.</p>
+</section>
+
+<section>
+  <h2><span>02</span>Linha do tempo</h2>
+  <ul class="tl">
+    <li><span class="t">13/10</span><div><b>Entrou na Pré-UTI automática</b> pelo alerta "2 ocorrências gravíssimas em 90 dias". E-mail de Pré-UTI enviado à franqueada à noite, com cópia para Vivianny e Isabella.<span class="tag amb">Pré-UTI</span></div></li>
+    <li><span class="t">21/10</span><div><b>7 dias sem a entrega</b> do plano de ocorrências. O robô mandou o caso para a aprovação.<span class="tag blu">Aguardando aprovação</span></div></li>
+    <li><span class="t">22/10</span><div><b>Vivianny registrou exceção</b>: "Não entrará neste primeiro momento na UTI". O caso voltou para Alerta.<span class="tag amb">Alerta</span></div></li>
+    <li><span class="t">23/10</span><div><b>Robô encerrou o caso</b>: as duas gravíssimas deixaram de contar na janela de 90 dias e o alerta sumiu dos dados.<span class="tag grn">Fora da UTI</span></div></li>
+  </ul>
+  <p class="src">Fonte: Central da UTI, caso 644 e eventos do Kanban de Franquias.</p>
+</section>
+
+<section>
+  <h2><span>03</span>Como está hoje</h2>
+  <div class="stats">
+    <div class="stat ok"><div class="v">2<small>de 50</small></div><div class="l">Imóveis críticos</div><div class="d">4% da carteira · corte da régua: 20%</div></div>
+    <div class="stat"><div class="v">88,4</div><div class="l">Score de setembro · Bom</div><div class="d">subiu 5,8 pts (agosto 82,6)</div></div>
+    <div class="stat"><div class="v">7</div><div class="l">Ocorrências em 90 dias</div><div class="d">2 graves · 0 gravíssimas</div></div>
+    <div class="stat ok"><div class="v">0</div><div class="l">Manutenções abertas</div><div class="d">Sapron, cards em aberto</div></div>
+  </div>
+  <div class="wrap">
+  <table>
+    <thead><tr><th>Indicador</th><th class="r">Valor</th><th>Leitura</th></tr></thead>
+    <tbody>
+      <tr><td>Score jun → set</td><td class="r">93,5 → 96,2 → 82,6 → 88,4</td><td>Caiu em agosto, recuperou em setembro. Outubro ainda não fechou no ScorePulse.</td></tr>
+      <tr><td>Check-in do mês (Airbnb)</td><td class="r warn">4,64</td><td>13 de 41 imóveis com check-in abaixo de 4,6. Único ponto que o diagnóstico ainda liga (plano de ocorrências).</td></tr>
+      <tr><td>Limpeza do mês · Airbnb do mês</td><td class="r">4,79 · 4,69</td><td>Acima do corte de 4,6.</td></tr>
+      <tr><td>Avaliações 5 estrelas, 90 dias</td><td class="r">82%</td><td>Média Airbnb de 4,70 no período.</td></tr>
+      <tr><td>Ocorrências por categoria</td><td class="r">3 · 2 · 1 · 1</td><td>Implantação 3, Limpeza &amp; Conservação 2, Despesas 1, Governança 1.</td></tr>
+      <tr><td>UTI de Imóveis</td><td class="r">1</td><td>MON0099 na fila, sem tratamento aberto.</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="src">Fontes: robô da Central (leitura de 03/11/2026), Nekt (nota do anúncio no Airbnb × carteira ativa do Sapron), ScorePulse (Score de 01/09/26), Central de Ocorrências (90 dias, só as que contam).</p>
+</section>
+
+<section>
+  <h2><span>04</span>O que faria ela voltar</h2>
+  <ul class="plain">
+    <li><b>Score</b> Regular ou Ruim no fechamento de outubro, ou queda de 10 pontos ou mais.</li>
+    <li><b>Carteira crítica</b> em 20% ou mais, o que hoje seriam 10 imóveis (são 2).</li>
+    <li><b>2 ou mais ocorrências gravíssimas</b> em 90 dias, ou stop total por qualidade.</li>
+    <li><b>Manutenção</b>: 20 ou mais cards abertos e o dobro da média da rede (hoje 0).</li>
+  </ul>
+  <div class="note">Se o alerta voltar em menos de 30 dias depois de uma Pré-UTI, a Central leva o caso direto para a aprovação, como reincidente. Esse prazo vence em 22/11/2026.</div>
+</section>
+
+<footer>
+  <span>Central da UTI · Backoffice de Franquias · Isabella Bino</span>
+  <span>Dados de 03/11/2026 · página gerada em 04/11/2026</span>
+</footer>
+
+</div>
+</body>
+</html>
