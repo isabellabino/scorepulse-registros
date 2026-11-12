@@ -1,0 +1,453 @@
+<title>Taxa de Limpeza para CS Proprietários</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* Layout: documento editorial de uma coluna (72ch), faixa de tempo no topo, blocos numerados
+   porque a apresentação é uma sequência real. Tema claro Seazone; dark só redefine tokens. */
+:root{
+  --bg:#EFF3FB; --surface:#FFFFFF; --line:#E2E6F0; --fg:#2E2E2E; --muted:#7C7C7C;
+  --navy:#00143D; --navy-ink:#FFFFFF; --azul:#0055FF; --coral:#FC6058;
+  --tint-azul:#E8EFFF; --tint-coral:#FFECE9; --tint-amber:#FFF4DF; --amber:#9A5F00; --tint-navy:#E6EAF2;
+  --font:"Seazone Helvetica","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --radius:8px; --radius-lg:12px; --shadow:0 0 3.3px rgba(0,20,61,.18);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0B1327; --surface:#131D36; --line:#273354; --fg:#E6EAF2; --muted:#9AA6C2;
+    --navy:#F2F5FB; --navy-ink:#0B1327; --azul:#7DA7FF; --coral:#FF8A79;
+    --tint-azul:#172A55; --tint-coral:#4A1F1C; --tint-amber:#3E2E0E; --amber:#F2C15C; --tint-navy:#1B2742;
+    --shadow:0 0 3.3px rgba(0,0,0,.5); color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0B1327; --surface:#131D36; --line:#273354; --fg:#E6EAF2; --muted:#9AA6C2;
+  --navy:#F2F5FB; --navy-ink:#0B1327; --azul:#7DA7FF; --coral:#FF8A79;
+  --tint-azul:#172A55; --tint-coral:#4A1F1C; --tint-amber:#3E2E0E; --amber:#F2C15C; --tint-navy:#1B2742;
+  --shadow:0 0 3.3px rgba(0,0,0,.5); color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font);font-size:16px;line-height:1.55;
+  padding-block:0 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:var(--azul)}
+h1,h2,h3{text-wrap:balance;margin:0;line-height:1.2}
+p{margin:0}
+.wrap{max-width:76ch;margin:0 auto}
+
+/* Cabeçalho */
+.hero{background:var(--navy);color:var(--navy-ink);margin:0 calc(-1 * max(16px,env(safe-area-inset-left,0px))) 0 calc(-1 * max(16px,env(safe-area-inset-right,0px)));
+  padding-block:40px 32px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.hero .wrap{display:grid;gap:16px}
+.eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;opacity:.8}
+.hero h1{font-size:clamp(28px,4.5vw,40px);font-weight:700;letter-spacing:-.01em}
+.hero p.lead{font-size:17px;max-width:62ch;opacity:.92}
+.meta{display:flex;flex-wrap:wrap;gap:8px 24px;font-size:14px;opacity:.9}
+.meta b{font-weight:700}
+
+/* Faixa de tempo */
+.timeline{margin-top:-20px}
+.track{display:flex;gap:4px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);padding:8px;box-shadow:var(--shadow)}
+.track a{flex:var(--w) 1 0;min-width:0;text-decoration:none;color:var(--fg);background:var(--tint-navy);border-radius:6px;padding:8px 10px;display:grid;gap:2px}
+.track a:hover,.track a:focus-visible{background:var(--tint-azul);outline:none}
+.track .min{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.track .nm{font-size:12px;font-weight:700;line-height:1.2;overflow-wrap:anywhere}
+@media (max-width:640px){.track{flex-direction:column}.track .nm{font-size:13px}}
+
+/* Seções */
+main.wrap{display:grid;gap:48px;margin-top:48px}
+section{display:grid;gap:16px}
+.sec-head{display:grid;gap:4px;border-bottom:1px solid var(--line);padding-bottom:12px}
+.sec-head .eyebrow{color:var(--azul);opacity:1}
+.sec-head h2{font-size:24px;font-weight:700}
+.sec-head .obj{color:var(--muted);font-size:15px}
+.row{display:grid;grid-template-columns:120px 1fr;gap:8px 16px;align-items:start}
+.row .lbl{font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--muted);padding-top:4px}
+@media (max-width:560px){.row{grid-template-columns:1fr}.row .lbl{padding-top:0}}
+ul{margin:0;padding-left:20px;display:grid;gap:6px}
+ul.fala li::marker{color:var(--azul)}
+.note{border-radius:var(--radius);padding:12px 16px;font-size:15px;display:grid;gap:4px}
+.note .t{font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:700}
+.note.ask{background:var(--tint-azul)} .note.ask .t{color:var(--azul)}
+.note.warn{background:var(--tint-coral)} .note.warn .t{color:var(--coral)}
+.note.open{background:var(--tint-amber)} .note.open .t{color:var(--amber)}
+.screen{background:var(--surface);border:1px dashed var(--line);border-radius:var(--radius);padding:10px 14px;font-size:14px;color:var(--muted)}
+.screen b{color:var(--fg)}
+
+/* Tabelas */
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:520px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700;background:var(--tint-navy)}
+tr:last-child td{border-bottom:0}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.pill{display:inline-block;border-radius:999px;padding:2px 10px;font-size:12px;font-weight:700}
+.pill.no{background:var(--tint-coral);color:var(--coral)}
+.pill.ok{background:var(--tint-azul);color:var(--azul)}
+.pill.fr{background:var(--tint-amber);color:var(--amber)}
+
+/* Exemplo */
+.ex{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
+.ex div{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:12px 14px;display:grid;gap:2px}
+.ex .k{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-weight:700}
+.ex .v{font-size:22px;font-weight:700;font-variant-numeric:tabular-nums;color:var(--navy)}
+.ex .s{font-size:13px;color:var(--muted)}
+
+/* Prompt */
+.promptbox{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:var(--shadow);display:grid}
+.promptbar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--line)}
+.promptbar span{font-size:14px;color:var(--muted)}
+button.copy{font:inherit;font-size:14px;font-weight:700;background:var(--azul);color:#fff;border:0;border-radius:999px;padding:8px 16px;cursor:pointer}
+button.copy:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
+pre{margin:0;padding:16px;white-space:pre-wrap;word-break:break-word;font:14px/1.5 var(--font);max-height:480px;overflow:auto;color:var(--fg)}
+footer{margin-top:48px;font-size:13px;color:var(--muted);display:grid;gap:4px}
+@media (prefers-reduced-motion:no-preference){.track a{transition:background .15s ease-out}}
+</style>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Base de Conhecimento · Backoffice de Franquias</p>
+    <h1>Taxa de limpeza: o que o CS Proprietários precisa saber</h1>
+    <p class="lead">Roteiro de 40 minutos. Explica por que a taxa mudou, o que entra na conta, como a calculadora decide e o que o CS faz quando o proprietário reclama.</p>
+    <div class="meta">
+      <span><b>Quando</b> quarta-feira, 22/10/2026</span>
+      <span><b>Apresenta</b> Isabella Bino</span>
+      <span><b>Complementam</b> David Soares e Rayanne Oliveira</span>
+      <span><b>Público</b> time de CS Proprietários</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap timeline">
+  <nav class="track" aria-label="Blocos e minutos">
+    <a href="#b1" style="--w:2"><span class="min">0–2</span><span class="nm">Abertura</span></a>
+    <a href="#b2" style="--w:5"><span class="min">2–7</span><span class="nm">Por que mudou</span></a>
+    <a href="#b3" style="--w:5"><span class="min">7–12</span><span class="nm">Custo, não lucro</span></a>
+    <a href="#b4" style="--w:8"><span class="min">12–20</span><span class="nm">O que entra na conta</span></a>
+    <a href="#b5" style="--w:5"><span class="min">20–25</span><span class="nm">Mercado e régua</span></a>
+    <a href="#b6" style="--w:7"><span class="min">25–32</span><span class="nm">Calculadora ao vivo</span></a>
+    <a href="#b7" style="--w:6"><span class="min">32–38</span><span class="nm">Fluxo do CS</span></a>
+    <a href="#b8" style="--w:2"><span class="min">38–40</span><span class="nm">Perguntas</span></a>
+  </nav>
+</div>
+
+<main class="wrap">
+
+<section id="b1">
+  <div class="sec-head">
+    <p class="eyebrow">Bloco 1 · 2 min · 0:00–0:02</p>
+    <h2>Abertura</h2>
+    <p class="obj">Dizer o que a pessoa vai levar da sessão e combinar o formato.</p>
+  </div>
+  <div class="row"><span class="lbl">Na tela</span><p class="screen">Slide 1 (capa) e slide 2 (agenda).</p></div>
+  <div class="row"><span class="lbl">Fala guiada</span>
+    <ul class="fala">
+      <li>"Em setembro a taxa de limpeza passou a ser calculada por uma ferramenta, e muita taxa mudou. Vocês são quem ouve o proprietário quando ele reclama. A ideia de hoje é vocês saírem sabendo explicar o valor e sabendo o que fazer com cada pedido."</li>
+      <li>Formato: slides como fio condutor, calculadora aberta ao vivo, perguntas a qualquer momento. David e Rai complementam.</li>
+      <li>Combinar: ao final, o roteiro e os slides ficam na base de conhecimento.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="b2">
+  <div class="sec-head">
+    <p class="eyebrow">Bloco 2 · 5 min · 0:02–0:07</p>
+    <h2>Por que a taxa mudou</h2>
+    <p class="obj">Situar a mudança: a planilha morreu, a calculadora manda, e a base inteira está sendo revisada.</p>
+  </div>
+  <div class="row"><span class="lbl">Na tela</span><p class="screen">Slide 3 (antes / agora / consequência).</p></div>
+  <div class="row"><span class="lbl">Fala guiada</span>
+    <ul class="fala">
+      <li>Antes: a taxa era controlada numa planilha e, na prática, a franquia dizia o valor. Resultado: imóveis iguais no mesmo prédio com taxas diferentes (R$ 200, R$ 220, R$ 250).</li>
+      <li>Agora: a Calculadora de Taxa de Limpeza 2026 calcula o valor pelo custo real da operação em cada praça. A planilha foi desativada.</li>
+      <li>Imóvel novo: a vistoria da franquia manda a configuração (quartos, banheiros, capacidade, amenidades) para a calculadora, que devolve a taxa e grava no Sapron. O imóvel já nasce com a taxa certa.</li>
+      <li>Imóvel antigo: a base está sendo revisada em levas. A primeira padronizou os prédios (perto de 900 imóveis). Agora rodam as faixas seguintes, com cronograma. Por isso o proprietário pode ver a taxa subir ou descer sem ter pedido.</li>
+      <li>Escala: perto de 150 franquias e 4.000 imóveis ativos. Não dá para ter uma regra por franquia; a regra é da rede.</li>
+    </ul>
+  </div>
+  <div class="note ask"><span class="t">Se perguntarem</span><p>"Então o proprietário vai receber aviso de cada mudança?" Resposta: o ajuste é operacional e segue o cronograma das levas; quem comunica proprietário é o CS, com o argumento de custo deste roteiro. Confirmar com a Rai se haverá comunicado em massa.</p></div>
+</section>
+
+<section id="b3">
+  <div class="sec-head">
+    <p class="eyebrow">Bloco 3 · 5 min · 0:07–0:12</p>
+    <h2>Taxa de limpeza é custo, não lucro</h2>
+    <p class="obj">Dar ao CS o argumento central, o mesmo para proprietário e franquia.</p>
+  </div>
+  <div class="row"><span class="lbl">Na tela</span><p class="screen">Slides 4 e 5 (0% de margem; shampoo e condicionador).</p></div>
+  <div class="row"><span class="lbl">Fala guiada</span>
+    <ul class="fala">
+      <li>A taxa repassa à franquia o custo de deixar o imóvel pronto. Não é receita do proprietário e não foi feita para dar lucro à franquia.</li>
+      <li>Quem ganha com a reserva é o proprietário, pela diária. Logo a Seazone quer a menor taxa que cubra o custo.</li>
+      <li>Analogia da Rai: o hóspede compra diária e taxa juntas, como shampoo e condicionador na mesma caixa. Se a taxa fica cara, a diária tem de cair para a reserva fechar.</li>
+      <li>Cadeia que o CS conhece de perto: taxa alta → diária cai ou o imóvel para de vender → faturamento do proprietário cai → pedido de distrato. Faturamento é hoje o maior motivo de saída de proprietário.</li>
+      <li>Por isso taxa fixa o ano inteiro: custo de faxina não muda na alta temporada. O que muda com a temporada é a diária, e aí o proprietário ganha.</li>
+    </ul>
+  </div>
+  <div class="note warn"><span class="t">Cuidado</span><p>Não prometer ao proprietário que taxa menor vai "vender mais". A taxa é custo. Reduzir abaixo do custo joga prejuízo para a franquia e volta como problema de operação (faxina ruim, troca de faxineira, ocorrência).</p></div>
+</section>
+
+<section id="b4">
+  <div class="sec-head">
+    <p class="eyebrow">Bloco 4 · 8 min · 0:12–0:20</p>
+    <h2>O que entra na conta</h2>
+    <p class="obj">Abrir as seis parcelas. O CS precisa saber citar cada uma, não calcular.</p>
+  </div>
+  <div class="row"><span class="lbl">Na tela</span><p class="screen">Slides 6, 7 e 8 (tabela das parcelas; piso e teto da lavanderia; mão de obra CLT). Se der tempo, abrir o custo de um imóvel na calculadora.</p></div>
+  <div class="tbl"><table>
+    <thead><tr><th>Parcela</th><th>Como é calculada</th><th>O que dizer ao proprietário</th></tr></thead>
+    <tbody>
+      <tr><td><b>Lavanderia</b></td><td>Todo o enxoval que o cadastro do imóvel manda para a lavanderia a cada reserva (fronhas, lençóis, toalhas, tapete, manta ou edredom), peça a peça, pelo preço da lavanderia homologada da praça. Cada preço fica preso entre o piso e o teto que a rede pratica. É a maior parcela, perto de metade do custo. Detalhe logo abaixo.</td><td>"É o enxoval inteiro lavado a cada reserva, no preço da lavanderia parceira da sua região."</td></tr>
+      <tr><td><b>Mão de obra</b></td><td>Custo de uma pessoa CLT com todos os encargos, passagem e bônus de R$ 10 por apartamento, limpando só 3 estúdios por dia. Dá cerca de R$ 55 num apartamento de 1 quarto.</td><td>"Consideramos uma equipe contratada, com encargos, e um ritmo conservador de limpezas por dia."</td></tr>
+      <tr><td><b>Material de limpeza</b></td><td>Rendimento indicado pelo fornecedor profissional da rede. Perto de R$ 7 num apartamento pequeno.</td><td>"Produtos profissionais, pelo rendimento do rótulo."</td></tr>
+      <tr><td><b>Amenities</b></td><td>Shampoo, condicionador e sabonete da lojinha, cerca de R$ 2 cada, já com o frete da praça mais cara.</td><td>"Kit de boas-vindas com o frete mais caro do país já embutido."</td></tr>
+      <tr><td><b>Deslocamento</b></td><td>R$ 10 por limpeza; R$ 12 em praças de trânsito pesado, como São Paulo.</td><td>"Ida da equipe até o imóvel."</td></tr>
+      <tr><td><b>Área privativa</b></td><td>R$ 20 fixos se o imóvel tem piscina, churrasqueira, jacuzzi ou lareira, independente de quantas. Antes eram R$ 20 por item.</td><td>"Espaço privativo exige limpeza extra."</td></tr>
+      <tr><td><b>Comissão das OTAs</b></td><td>Soma das parcelas dividida por 0,82. Airbnb e Booking ficam com 18% da taxa; o que sobra tem de cobrir o custo.</td><td>"Parte da taxa fica com a plataforma de reserva."</td></tr>
+    </tbody>
+  </table></div>
+  <div class="note ask"><span class="t">Se perguntarem</span><p>"O proprietário diz que a faxineira dele cobra R$ 150, então a taxa está baixa." Resposta: o proprietário não paga a faxina; a franquia paga. O valor dele não entra na conta. Se a franquia achar que o custo não fecha, é ela quem apresenta os custos no suporte.</p></div>
+
+  <div class="row"><span class="lbl">Lavanderia em detalhe</span>
+    <ul class="fala">
+      <li><b>Por que ela merece 2 dos 8 minutos:</b> é a parcela que mais pesa. No imóvel mediano da carteira a lavanderia é 47% do custo da limpeza (entre 41% e 52% na metade central dos imóveis). Quando o proprietário pergunta "por que tão caro", a resposta quase sempre está aqui.</li>
+      <li><b>Passo 1, o enxoval sai do cadastro.</b> O Sapron diz quantos travesseiros, camas, banheiros, lavabos e hóspedes o imóvel tem, e disso sai a lista de peças que vai para a lavanderia a cada reserva. Não é estimativa nem média: é a configuração daquele imóvel.</li>
+      <li><b>Passo 2, o preço é o da lavanderia homologada da praça.</b> O Hub de Serviços (time de Fornecedores) homologa lavanderias por cidade, hoje 90 lavanderias em 64 cidades, com preço por peça. Cidade com mais de uma lavanderia entra pelo maior preço de cada peça, para a franquia que usa a mais cara não ficar descoberta.</li>
+      <li><b>Passo 3, piso e teto da rede.</b> Para cada peça, a calculadora junta o preço de todas as praças homologadas, descarta os 10% mais baratos e os 10% mais caros e lê o que sobrou: o piso é a mediana e o teto é o maior preço que ficou. O preço da praça entra inteiro quando está entre os dois; abaixo do piso sobe para o piso, acima do teto desce para o teto. O piso evita que uma cotação fora do padrão da rede derrube a taxa; o teto evita que uma praça cara demais a puxe sozinha. Hoje: fronha de R$ 2,50 a R$ 4,00, toalha de banho de R$ 3,50 a R$ 6,10, lençol de casal de R$ 4,50 a R$ 8,00.</li>
+      <li><b>Passo 4, soma.</b> Quantidade vezes preço de cada peça, somado, é a parcela de lavanderia. Nas cidades de frio extremo (Gramado, Canela, Campos do Jordão, Petrópolis, Urubici e Anitápolis) a manta dá lugar a edredom e capa; o edredom entra dividido por 5, porque não vai para a lavanderia a cada troca.</li>
+    </ul>
+  </div>
+  <div class="tbl"><table>
+    <thead><tr><th>Peça</th><th>Quantas vão por reserva</th><th>De onde vem o número</th></tr></thead>
+    <tbody>
+      <tr><td>Fronha</td><td>1 por travesseiro</td><td>Campo "travesseiros" do Sapron. Padrão da rede: 4 por cama de casal, queen ou king; 1 por cama de solteiro.</td></tr>
+      <tr><td>Lençol</td><td>2 por cama, no tamanho da cama</td><td>Camas cadastradas (solteiro, casal, queen, king). Sofá-cama conta.</td></tr>
+      <tr><td>Toalha de banho</td><td>1 por hóspede</td><td>Capacidade do imóvel.</td></tr>
+      <tr><td>Toalha de rosto e tapete</td><td>1 de cada por banheiro e por lavabo</td><td>Banheiros e lavabos cadastrados.</td></tr>
+      <tr><td>Manta (edredom e capa no frio extremo)</td><td>1 por cama</td><td>Camas cadastradas. Edredom entra dividido por 5.</td></tr>
+      <tr><td>Pano de prato e fronha da almofada</td><td>2 panos e 1 fronha, fixos</td><td>Todo imóvel, de qualquer tamanho. Preço igual ao da fronha.</td></tr>
+    </tbody>
+  </table></div>
+  <p><b>Exemplo real</b> (base viva da calculadora em 28/10/2026): AAR0203, Campeche, Florianópolis, 1 quarto, 1 banheiro, 2 hóspedes, 1 cama queen, 4 travesseiros. Lavanderias homologadas da praça: Master Clean e Lavanderia Santos.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Peça</th><th class="num">Qtd</th><th class="num">Lavanderia cobra</th><th class="num">Entra na conta</th><th class="num">Subtotal</th></tr></thead>
+    <tbody>
+      <tr><td>Fronha</td><td class="num">4</td><td class="num">R$ 2,70</td><td class="num">R$ 2,70</td><td class="num">R$ 10,80</td></tr>
+      <tr><td>Lençol queen</td><td class="num">2</td><td class="num">R$ 2,70</td><td class="num">R$ 4,50 <span class="pill ok">piso</span></td><td class="num">R$ 9,00</td></tr>
+      <tr><td>Toalha de banho</td><td class="num">2</td><td class="num">R$ 2,70</td><td class="num">R$ 3,50 <span class="pill ok">piso</span></td><td class="num">R$ 7,00</td></tr>
+      <tr><td>Toalha de rosto</td><td class="num">1</td><td class="num">R$ 2,70</td><td class="num">R$ 2,70</td><td class="num">R$ 2,70</td></tr>
+      <tr><td>Tapete</td><td class="num">1</td><td class="num">R$ 2,70</td><td class="num">R$ 2,70</td><td class="num">R$ 2,70</td></tr>
+      <tr><td>Manta queen</td><td class="num">1</td><td class="num">R$ 12,00</td><td class="num">R$ 14,00 <span class="pill ok">piso</span></td><td class="num">R$ 14,00</td></tr>
+      <tr><td>Pano de prato</td><td class="num">2</td><td class="num">R$ 2,70</td><td class="num">R$ 2,70</td><td class="num">R$ 5,40</td></tr>
+      <tr><td>Fronha da almofada</td><td class="num">1</td><td class="num">R$ 2,70</td><td class="num">R$ 2,70</td><td class="num">R$ 2,70</td></tr>
+      <tr><td><b>Lavanderia</b></td><td class="num"><b>14</b></td><td></td><td></td><td class="num"><b>R$ 54,30</b></td></tr>
+    </tbody>
+  </table></div>
+  <p class="screen">Custo total do AAR0203: <b>R$ 144,60</b>, e a lavanderia é 38% dele. Régua: <b>R$ 180</b>. Taxa hoje: <b>R$ 190</b>, dentro dos 10%. Três peças subiram ao piso porque a lavanderia de Florianópolis é das mais baratas da rede. O CS mostra exatamente esta tabela no bloco "custo aberto" da calculadora.</p>
+  <div class="note ask"><span class="t">Se perguntarem</span>
+    <p><b>"A lavanderia da minha cidade cobra menos."</b> O preço da conta é o da lavanderia homologada pelo Hub de Serviços, que é a que a franquia usa. Cotação melhor é assunto do time de Fornecedores, não de taxa de limpeza: o CS não negocia peça. E, quando a praça já é barata, a conta usa o piso da rede, que é mais alto que a cotação local, não mais baixo.</p>
+    <p><b>"O hóspede ficou uma noite, precisa lavar tudo?"</b> Precisa. O padrão da rede é troca completa a cada reserva, como hotel. É por isso que a taxa não depende de quantas noites o hóspede ficou.</p>
+  </div>
+  <div class="note warn"><span class="t">Cuidado</span>
+    <p>Travesseiro, cama ou banheiro errado no Sapron muda esta parcela: travesseiro zerado tira a fronha inteira da conta. Se o custo aberto não bate com o imóvel real, é cadastro, e o caminho é o card para o Backoffice corrigir com a franquia, não discutir o valor.</p>
+    <p>Em 59 das 64 praças alguma peça sobe ao piso; em 24 alguma bate no teto (Ilhéus, Trancoso, Ubatuba e Arraial do Cabo são as que mais batem). Onde o teto corta, a taxa fica abaixo do que a lavanderia cobra de verdade, e essa é uma conversa da Operação com o fornecedor, não do CS com o proprietário.</p>
+  </div>
+</section>
+
+<section id="b5">
+  <div class="sec-head">
+    <p class="eyebrow">Bloco 5 · 5 min · 0:20–0:25</p>
+    <h2>Mercado, régua e a regra dos 10%</h2>
+    <p class="obj">Separar o que decide o valor (custo) do que só compara (mercado), e explicar por que nem toda taxa fora da régua muda.</p>
+  </div>
+  <div class="row"><span class="lbl">Na tela</span><p class="screen">Slides 9, 10 e 11 (mercado é bússola; regra dos 10% e exceções; exemplo SGA0815).</p></div>
+  <div class="row"><span class="lbl">Fala guiada</span>
+    <ul class="fala">
+      <li>Mercado da região: P50 é a taxa do meio; P75, mais cara que 75% dos concorrentes; P90, mais cara que 90%. Concorrente é só anfitrião profissional: 15 ou mais anúncios ativos no Airbnb, mesma capacidade de hóspedes (obrigatório) e mesma quantidade de quartos. Medido toda segunda-feira.</li>
+      <li>O mercado não entra na conta. Serve para o CS e a franquia enxergarem se a taxa está muito acima da concorrência (então a diária sofre) ou muito abaixo.</li>
+      <li>Régua é o valor que a calculadora diz que a taxa deveria ser. Regra dos 10%: se a taxa de hoje está até 10% acima ou abaixo da régua, não muda. Senão seriam 4.000 ajustes por mês a cada variação de lavanderia ou frete.</li>
+      <li>Mesmo prédio, mesma configuração: mesma taxa. Foi a primeira leva.</li>
+      <li>Exceção validada: perto de 400 taxas foram revisadas uma a uma. Quando a calculadora mandava subir um imóvel que já estava no P90 do mercado, a decisão foi manter. Esses aparecem na ferramenta como "validado como exceção".</li>
+    </ul>
+  </div>
+  <div class="note ask"><span class="t">Reforçar aqui: as duas comparações que o proprietário traz</span>
+    <p><b>"Outra pessoa cobra R$ X."</b> Perguntar quem é a outra pessoa. Um anúncio avulso, um vizinho ou um conhecido não é concorrente: quem tem um imóvel só costuma nem cobrar taxa, porque ganha na diária. A calculadora compara só com anfitriões profissionais, com 15 ou mais anúncios ativos, mesma capacidade e mesmos quartos. E mesmo esse mercado não define o valor: a taxa é o custo de limpar o imóvel dele. Se o mercado da região está abaixo da taxa e o custo sustenta o valor, o que se trabalha é a diária e o posicionamento do anúncio, não a taxa.</p>
+    <p><b>"Quando eu cuidava do imóvel eu gastava R$ Y."</b> Era outra operação. Quem cuida sozinho paga uma faxineira avulsa por dia, lava o enxoval em casa, não repõe kit de boas-vindas a cada hóspede e não tem equipe com encargos nem padrão de hotel. A operação profissional troca e lava todo o enxoval em lavanderia a cada reserva, repõe amenities, paga deslocamento e equipe contratada, e ainda deixa 18% da taxa com a plataforma de reserva. O R$ Y dele não inclui nada disso, então não é comparável.</p>
+    <p><b>Resposta curta para as duas:</b> "O valor não vem do que outros cobram nem do que custava antes. Vem do custo real de limpar o seu imóvel no padrão da rede, e eu posso abrir esse custo com o senhor." E abrir o custo na calculadora.</p>
+  </div>
+  <p><b>Exemplo real</b> (base viva da calculadora em 19/10/2026): SGA0815, Jurerê, Florianópolis, 2 quartos, 2 banheiros, 4 hóspedes.</p>
+  <div class="ex">
+    <div><span class="k">Custo</span><span class="v">R$ 224,80</span><span class="s">soma das parcelas</span></div>
+    <div><span class="k">Régua</span><span class="v">R$ 275</span><span class="s">custo ÷ 0,82, arredondado</span></div>
+    <div><span class="k">Taxa hoje</span><span class="v">R$ 290</span><span class="s">5,5% acima: dentro dos 10%</span></div>
+    <div><span class="k">Decisão</span><span class="v">Mantém</span><span class="s">situação "ok" na ferramenta</span></div>
+  </div>
+  <div class="note ask"><span class="t">Como usar o exemplo</span><p>"O proprietário do SGA0815 pede para baixar para R$ 250." Mostrar na calculadora: R$ 250 fica abaixo da régua e, descontados os 18% da OTA, sobra R$ 205 para um custo de R$ 224,80. Resposta ao proprietário: não reduz, e o motivo é o custo aberto.</p></div>
+</section>
+
+<section id="b6">
+  <div class="sec-head">
+    <p class="eyebrow">Bloco 6 · 7 min · 0:25–0:32</p>
+    <h2>A calculadora ao vivo</h2>
+    <p class="obj">Mostrar só as telas que o CS vai usar para responder um proprietário.</p>
+  </div>
+  <div class="row"><span class="lbl">Na tela</span><p class="screen">Slide 12 de transição e depois a calculadora (<b>taxa-limpeza-2026.seazone.properties</b>, login com e-mail @seazone.com.br). Deixar o SGA0815 já pesquisado antes de começar.</p></div>
+  <div class="row"><span class="lbl">Sequência</span>
+    <ul class="fala">
+      <li><b>Busca do imóvel.</b> Cadastro que vem do Sapron (quartos, banheiros, capacidade, camas). Se o cadastro está errado, a taxa sai errada: isso vira warning e o Backoffice corrige com a franquia.</li>
+      <li><b>Custo aberto.</b> Abrir as parcelas uma a uma: lavanderia (mostrar o "piso da rede" quando aparecer), mão de obra, material, amenities, deslocamento. É daqui que sai o argumento para o proprietário.</li>
+      <li><b>Mercado da região.</b> P50, P75, P90 e a lista de concorrentes com link para o anúncio. Usar como comparação, nunca como justificativa de valor.</li>
+      <li><b>Exceção.</b> Mostrar um imóvel com "validado como exceção" e explicar que ali houve decisão humana registrada, com motivo.</li>
+      <li><b>Tabela da região.</b> Simular uma configuração (3 quartos, 3 banheiros, 6 hóspedes) para mostrar que a taxa muda com o imóvel, não com a franquia.</li>
+      <li><b>Tabela de lavanderia.</b> Só para saber que existe. Ajuste de lavanderia é com o time de Fornecedores, não com taxa de limpeza.</li>
+    </ul>
+  </div>
+  <div class="note warn"><span class="t">Não mostrar</span><p>Portfólio, Warnings e Regras são telas de gestão do Backoffice. Não interessam ao CS e abrem perguntas que não cabem na sessão.</p></div>
+</section>
+
+<section id="b7">
+  <div class="sec-head">
+    <p class="eyebrow">Bloco 7 · 6 min · 0:32–0:38</p>
+    <h2>Proprietário reclamou: o que o CS faz</h2>
+    <p class="obj">Entregar a régua de decisão. É o que o time vai usar no dia seguinte.</p>
+  </div>
+  <div class="row"><span class="lbl">Na tela</span><p class="screen">Slides 13 e 14 (fluxo de decisão; o que dizer e o que não dizer).</p></div>
+  <div class="tbl"><table>
+    <thead><tr><th>Situação</th><th>Como identificar</th><th>Decisão</th><th>Quem fala com quem</th></tr></thead>
+    <tbody>
+      <tr><td>Taxa acima da régua, fora dos 10%</td><td>Na calculadora, taxa de hoje maior que a régua em mais de 10%.</td><td><span class="pill ok">Ajuste devido</span></td><td>CS abre card de taxa de limpeza no Suporte Unificado. O Backoffice ajusta para a régua e o CS responde ao proprietário com o novo valor.</td></tr>
+      <tr><td>Taxa na régua ou abaixo</td><td>Taxa de hoje igual, menor ou até 10% acima da régua.</td><td><span class="pill no">Não reduzir</span></td><td>CS responde ao proprietário com o custo aberto e o valor calculado. Não abre suporte.</td></tr>
+      <tr><td>Proprietário com 5 ou mais imóveis na base</td><td>Contar os imóveis ativos do mesmo proprietário, em qualquer cidade.</td><td><span class="pill fr">Encaminhar à franquia</span></td><td>A negativa sobe à franquia pelo porte do proprietário. Decisão comercial é dela. Abaixo de 5, fica na negativa.</td></tr>
+      <tr><td>Proprietário quer taxa menor "para alugar mais"</td><td>Pedido de redução temporária, sem erro de cadastro.</td><td><span class="pill no">Não é o proprietário quem pede</span></td><td>Quem paga a faxina é a franquia; só ela pode pedir redução abaixo da régua, e entra como exceção reversível na calculadora.</td></tr>
+      <tr><td>Proprietário quer taxa maior</td><td>Acha que "a faxina custa mais".</td><td><span class="pill no">Não se aplica</span></td><td>Taxa não é receita do proprietário. Se a franquia precisar, ela apresenta os custos no suporte.</td></tr>
+      <tr><td>Cadastro errado (quartos, banheiros, capacidade)</td><td>O custo aberto não bate com o imóvel real.</td><td><span class="pill ok">Corrigir cadastro</span></td><td>CS abre card apontando o campo errado. A taxa recalcula sozinha depois da correção no Sapron.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="row"><span class="lbl">Dizer</span>
+    <ul class="fala">
+      <li>"A taxa cobre o custo da limpeza: enxoval, equipe, produtos, kit de boas-vindas e deslocamento."</li>
+      <li>"O valor foi calculado pelo custo real da sua região, e é o mesmo para imóveis iguais no seu prédio."</li>
+      <li>"O mercado da região está em R$ X (P50); o seu imóvel está em R$ Y." Só quando ajuda a mostrar que a taxa está adequada.</li>
+    </ul>
+  </div>
+  <div class="row"><span class="lbl">Não dizer</span>
+    <ul class="fala">
+      <li>Ocupação do imóvel como motivo da taxa (não entra na conta).</li>
+      <li>Margem ou lucro da franquia.</li>
+      <li>"A franquia pode reduzir por conta própria." Redução recusada não vai à franquia; só sobe quando o proprietário tem 5 ou mais imóveis.</li>
+      <li>Promessa de redução antes de olhar a calculadora.</li>
+    </ul>
+  </div>
+  <div class="note open"><span class="t">Validar com a Rai antes de quarta</span><p>A regra dos 5 imóveis veio de orientação verbal da Rai (não encaminhar pedido de redução de proprietário com menos de 5 imóveis). O David pediu para colocar na apresentação e validar com ela. Se ela não confirmar, tirar a linha da tabela e o slide 13.</p></div>
+</section>
+
+<section id="b8">
+  <div class="sec-head">
+    <p class="eyebrow">Bloco 8 · 2 min · 0:38–0:40</p>
+    <h2>Perguntas e encerramento</h2>
+    <p class="obj">Fechar com o canal e as respostas prontas para as perguntas mais prováveis.</p>
+  </div>
+  <div class="row"><span class="lbl">Na tela</span><p class="screen">Slides 15 e 16 (perguntas que vão chegar; encerramento).</p></div>
+  <div class="tbl"><table>
+    <thead><tr><th>Pergunta do proprietário</th><th>Resposta curta do CS</th></tr></thead>
+    <tbody>
+      <tr><td>"Por que meu vizinho do mesmo prédio paga diferente?"</td><td>Imóveis iguais no mesmo prédio ficam com a mesma taxa. Se está diferente, abrir card para o Backoffice conferir.</td></tr>
+      <tr><td>"Vai subir no verão?"</td><td>Não. A taxa é fixa o ano todo porque é custo. O que sobe na temporada é a diária, e isso é ganho seu.</td></tr>
+      <tr><td>"Por que mudou sem me avisar?"</td><td>A rede está padronizando todas as taxas pelo custo real. O valor novo é o custo da sua região para um imóvel como o seu.</td></tr>
+      <tr><td>"A faxina do meu imóvel custa isso mesmo?"</td><td>Abrir o custo: enxoval, equipe contratada, produtos, kit e deslocamento. Mostrar que não há margem.</td></tr>
+      <tr><td>"Posso ter taxa menor para alugar mais?"</td><td>A taxa já é a menor que cobre o custo. Reduzir abaixo disso deixa a limpeza sem cobertura. Quem decide reduzir abaixo do custo é quem paga a faxina.</td></tr>
+      <tr><td>"Minha taxa está acima do mercado."</td><td>Se estiver acima da régua, ajustamos. Se estiver na régua, o custo local sustenta o valor e a saída é trabalhar a diária, não a taxa.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="row"><span class="lbl">Fechamento</span>
+    <ul class="fala">
+      <li>Canal: card de taxa de limpeza no Suporte Unificado, para o Backoffice de Franquias. Quem responde: Isabella.</li>
+      <li>Frase final: "Taxa certa é a que cobre o custo e deixa a diária vender."</li>
+    </ul>
+  </div>
+</section>
+
+<section id="prompt">
+  <div class="sec-head">
+    <p class="eyebrow">Material de apoio</p>
+    <h2>Prompt para gerar os slides no Claude Design</h2>
+    <p class="obj">Os 16 slides citados nos blocos acima. Copiar e colar no Claude Design. Também salvo em Downloads como prompt-claude-design-taxa-limpeza-cs-proprietarios.md.</p>
+  </div>
+  <div class="promptbox">
+    <div class="promptbar"><span>Identidade Seazone, 16:9, 16 slides com notas do apresentador</span><button class="copy" id="btn-copy" type="button">Copiar prompt</button></div>
+<pre id="prompt-text">Crie uma apresentação de slides em português do Brasil para um treinamento interno de 40 minutos da Seazone chamado "Base de Conhecimento — Taxa de limpeza: o que o CS Proprietários precisa saber".
+
+CONTEXTO
+- Seazone é uma rede de gestão de aluguel por temporada com cerca de 150 franquias e 4.000 imóveis ativos.
+- Em setembro de 2026 a planilha antiga de taxas de limpeza foi desativada e entrou no ar a Calculadora de Taxa de Limpeza 2026, uma ferramenta web que calcula a taxa de cada imóvel pelo custo real da operação.
+- Público: time de CS Proprietários (Customer Success que atende os donos dos imóveis). Pessoas de negócio, não técnicas. Eles recebem reclamações de proprietários sobre a taxa de limpeza e precisam responder com segurança.
+- Apresenta: Isabella Bino (Analista, Backoffice de Franquias). Complementam: David Soares (coordenação Adm/Fin Franquias) e Rayanne Oliveira (gestão de Franquias).
+- Durante a apresentação a calculadora será mostrada ao vivo. Os slides são o fio condutor, não o conteúdo inteiro.
+
+IDENTIDADE VISUAL (obrigatório)
+- Tema claro, fundo #EFF3FB, superfícies brancas, texto #2E2E2E, texto secundário #7C7C7C, linhas #E2E6F0.
+- Cores de marca: navy #00143D (títulos e blocos de destaque), coral #FC6058 (só para alertas e o que NÃO fazer), azul #0055FF (links, destaques positivos e números-chave).
+- Fonte: Helvetica (ou Helvetica Neue). Hierarquia por peso e tamanho, nunca por segunda fonte decorativa.
+- Estilo editorial-corporativo sóbrio: muito espaço em branco, poucos elementos por slide, números grandes quando o número é a mensagem. Sem gradientes, sem glassmorphism, sem ícones genéricos de startup, sem fundo escuro.
+- Formato 16:9. Cada slide com no máximo 5 linhas de texto de corpo. Use tabelas simples quando houver comparação.
+- Reserve espaço com um placeholder claro (retângulo cinza com o texto "print da calculadora: &lt;tela&gt;") onde um print da ferramenta deve entrar.
+
+ESTRUTURA — 16 SLIDES (título, conteúdo e notas do apresentador para cada um)
+
+1. Capa. Título: "Taxa de limpeza: o que o CS Proprietários precisa saber". Subtítulo: "Base de Conhecimento · Backoffice de Franquias · outubro de 2026". Nomes de quem apresenta.
+
+2. Agenda em 6 blocos com minutos: (1) Por que a taxa mudou, 5 min · (2) Taxa é custo, não lucro, 5 min · (3) O que entra na conta, 8 min · (4) Mercado e régua, 5 min · (5) A calculadora ao vivo, 7 min · (6) O que fazer quando o proprietário reclama, 8 min · Perguntas, 2 min.
+
+3. "O que mudou em setembro". Três marcos lado a lado: antes (planilha controlada à mão, franquia dizia o valor), agora (calculadora calcula pelo custo, imóvel novo já nasce com a taxa certa pela vistoria), consequência (toda a base está sendo revisada em levas; o proprietário pode ver a taxa mudar). Nota: a vistoria da franquia manda a configuração do imóvel para a calculadora, que devolve a taxa e grava no Sapron.
+
+4. "Taxa de limpeza é custo, não lucro". Número grande: "0% de margem". Texto: a taxa repassa o custo da faxina para a franquia; quem ganha com a reserva é o proprietário, pelas diárias. Nota do apresentador: por isso a Seazone quer a taxa mais baixa possível que cubra o custo.
+
+5. "Shampoo e condicionador". A analogia: o hóspede compra diária + taxa de limpeza juntas, como um kit. Se a taxa fica cara demais, a diária precisa cair para a reserva fechar. Fluxo em 4 passos: taxa alta → diária cai → faturamento do proprietário cai → pedido de distrato. Destaque em coral: "faturamento é o maior motivo de distrato de proprietário".
+
+6. "O que entra na conta" (visão geral). Tabela com as 6 parcelas e uma linha de descrição curta: lavanderia (todo o enxoval a cada reserva, peça a peça, no preço da lavanderia homologada da praça, preso entre o piso e o teto da rede; perto de metade do custo), mão de obra (custo de CLT com encargos), material de limpeza (cerca de R$ 7 num apartamento pequeno), amenities (shampoo, condicionador e sabonete, cerca de R$ 2 cada, com frete do pior cenário), deslocamento (R$ 10, R$ 12 em praças de trânsito pesado), área privativa (R$ 20 fixos se tem piscina, churrasqueira, jacuzzi ou lareira). Última linha: soma ÷ 0,82 para cobrir os 18% de comissão das OTAs.
+
+7. "Lavanderia: o enxoval inteiro, a cada reserva". Duas colunas. Esquerda, a lista de peças com a regra de quantidade: fronha, 1 por travesseiro; lençol, 2 por cama; toalha de banho, 1 por hóspede; toalha de rosto e tapete, 1 por banheiro e por lavabo; manta, 1 por cama (edredom e capa nas cidades de frio extremo); 2 panos de prato e 1 fronha de almofada fixos. Direita, uma régua horizontal do piso e teto da rede: junta-se o preço da peça em todas as praças homologadas, cortam-se os 10% mais baratos e os 10% mais caros, o piso é a mediana do que sobrou e o teto é o maior preço que sobrou; o preço da praça entra inteiro entre os dois. Dois exemplos na régua: fronha de R$ 2,50 a R$ 4,00; toalha de banho de R$ 3,50 a R$ 6,10. Rodapé em azul: AAR0203 (Florianópolis, 1 quarto, 2 hóspedes) leva 14 peças à lavanderia por reserva, R$ 54,30, 38% do custo. Nota do apresentador: a lavanderia é perto de metade do custo no imóvel mediano; 90 lavanderias homologadas em 64 cidades pelo Hub de Serviços; em 59 das 64 praças alguma peça sobe ao piso e em 24 alguma bate no teto (Ilhéus, Trancoso, Ubatuba e Arraial do Cabo são as que mais batem); cotação melhor de lavanderia é assunto do time de Fornecedores, não do CS.
+
+8. "Mão de obra: o custo de uma CLT". Premissas em lista: salário CLT com todos os encargos, passagem, bônus de R$ 10 por apartamento, e uma pessoa limpando apenas 3 estúdios por dia (na prática limpa mais). Resultado: cerca de R$ 55 por limpeza de um apartamento de 1 quarto. Destaque: a conta nunca usa preço de diarista avulsa (R$ 120, R$ 200) porque isso não é operação de temporada.
+
+9. "Mercado é bússola, não régua". Explicar P50, P75 e P90 em uma frase cada. Concorrentes considerados: anfitriões com 15 ou mais anúncios ativos no Airbnb, mesma capacidade de hóspedes (obrigatório) e mesma quantidade de quartos. Medição toda segunda-feira. Destaque em coral: "o mercado NÃO entra no cálculo da taxa". Abaixo, um bloco "Duas frases que vão aparecer" com duas colunas: (1) "Outra pessoa cobra R$ X": um anúncio avulso não é concorrente e muitas vezes nem cobra taxa porque ganha na diária; a comparação é só com anfitriões profissionais, e mesmo assim o mercado não define o valor, o custo define. (2) "Quando eu cuidava do imóvel eu gastava R$ Y": era outra operação, sem lavanderia a cada reserva, sem reposição de amenities, sem equipe com encargos e sem os 18% da plataforma; o valor dele não é comparável. Resposta curta para as duas: "o valor vem do custo real de limpar o seu imóvel no padrão da rede, e eu posso abrir esse custo".
+
+10. "A regra dos 10% e as exceções". Três regras em cards simples: (a) diferença de até 10% entre a taxa de hoje e a régua não é alterada, para dar estabilidade; (b) imóveis do mesmo prédio com a mesma configuração ficam com a mesma taxa; (c) cerca de 400 taxas foram revisadas uma a uma e algumas ficaram como "exceção validada" (ex.: imóvel já no P90 do mercado não subiu). A taxa é fixa o ano inteiro: não muda com alta ou baixa temporada.
+
+11. "Exemplo real: SGA0815, Jurerê (Florianópolis)". Tabela: 2 quartos, 2 banheiros, 4 hóspedes · custo R$ 224,80 · régua R$ 275 · taxa hoje R$ 290 · diferença 5,5% (dentro dos 10%, não altera). Pergunta do proprietário: "quero baixar para R$ 250". Resposta: não, porque R$ 250 fica abaixo do custo com comissão.
+
+12. "A calculadora ao vivo" (slide de transição com placeholder de print). Lista do que será mostrado: busca do imóvel, custo aberto por parcela, mercado da região, tabela de lavanderia, tabela da região.
+
+13. "Proprietário pediu para reduzir: o que fazer". Fluxo de decisão em árvore ou tabela: 1) abrir o imóvel na calculadora e comparar taxa de hoje com a régua. 2) Taxa acima da régua além dos 10%: o ajuste é devido, abrir suporte de taxa de limpeza. 3) Taxa na régua ou abaixo: NÃO REDUZIR, responder ao proprietário com o custo aberto. 4) Proprietário com 5 ou mais imóveis na base: encaminhar à franquia, que decide comercialmente. Menos de 5: fica na negativa. 5) Redução temporária para vender mais só pode ser pedida pela franquia (é ela quem paga a faxina) e entra como exceção reversível.
+
+14. "O que dizer e o que não dizer". Duas colunas. Dizer: "a taxa cobre o custo da limpeza", "o valor foi calculado pelo custo real da região", "o mercado da região está em R$ X (P50)". Não dizer (em coral): ocupação do imóvel, margem ou lucro da franquia, "a franquia pode reduzir por conta própria", promessa de redução antes da análise.
+
+15. "Perguntas que vão chegar" em formato pergunta → resposta curta: "Por que meu vizinho do mesmo prédio paga diferente?" · "Vai subir no verão?" · "Por que mudou sem me avisar?" · "A faxina do meu imóvel custa isso mesmo?" · "Posso ter taxa menor para alugar mais?".
+
+16. Encerramento. Onde pedir: card de taxa de limpeza no Suporte Unificado, para o Backoffice de Franquias. Quem responde: Isabella. Frase final: "Taxa certa é a que cobre o custo e deixa a diária vender."
+
+NOTAS DO APRESENTADOR
+Escreva notas de 3 a 6 frases para cada slide, em tom de conversa, cobrindo o que será dito, não repetindo o texto do slide.
+
+NÃO INVENTE NÚMEROS além dos que estão neste prompt. Onde faltar dado, use um placeholder entre colchetes.</pre>
+  </div>
+</section>
+
+<footer>
+  <span>Fontes: transcrição do treinamento "Base de conhecimento" de 18/09/2026 (David, Rai, Isabella, Larissa, Hércules, Henry) e da Weekly Adm/Fin de 19/10/2026 (David, Isabella, Fabíola). Exemplo SGA0815 lido da base viva da calculadora em 19/10/2026 20:00.</span>
+  <span>Regras de encaminhamento conforme a skill analise-taxa-limpeza (regra dos 5 imóveis de 25/09/2026, NÃO REDUZIR de 24/09/2026). Roteiro escrito por Isabella Bino em 20/10/2026, para validação do David.</span>
+  <span>Lavanderia em detalhe (28/10/2026): regras de peça, piso e teto lidos do motor da calculadora (repositório calculadora-taxa-limpeza-2026-revisada); tabela de lavanderias do Hub, custo, régua e taxa do AAR0203 lidos da base viva pelo MCP taxa-limpeza em 28/10/2026 14:01; contagem de praças no piso e no teto calculada com essa tabela.</span>
+</footer>
+</main>
+
+<script>
+(function(){
+  var btn=document.getElementById('btn-copy'),pre=document.getElementById('prompt-text');
+  if(!btn||!pre)return;
+  function done(ok){btn.textContent=ok?'Copiado':'Selecione e copie (Ctrl+C)';setTimeout(function(){btn.textContent='Copiar prompt'},2500)}
+  function select(){var r=document.createRange();r.selectNodeContents(pre);var s=window.getSelection();s.removeAllRanges();s.addRange(r)}
+  btn.addEventListener('click',function(){
+    var t=pre.textContent;
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(t).then(function(){done(true)},function(){select();done(false)});
+    }else{select();done(false)}
+  });
+})();
+</script>
