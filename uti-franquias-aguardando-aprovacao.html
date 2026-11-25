@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>UTI de Franquias · 17 em Aguardando aprovação</title><meta name="robots" content="noindex,nofollow"><style>
+:root{--navy:#00143D;--coral:#FC6058;--azul:#0055FF;--fundo:#EFF3FB;--sup:#FDFEFF;--linha:#E2E6F0;--txt:#2E2E2E;--mudo:#636B7D;--verde:#249555;--ambar:#B06F00;
+--s1:4px;--s2:8px;--s3:12px;--s4:16px;--s5:24px;--s6:32px;--s7:48px;--s8:64px}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--fundo);color:var(--txt);font:16px/1.5 "Seazone Helvetica","Helvetica Neue",Helvetica,Arial,sans-serif}
+.pg{max-width:1120px;margin:0 auto;padding:var(--s7) var(--s5) var(--s8)}
+.topo{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:var(--s6);align-items:end;padding-bottom:var(--s6);border-bottom:2px solid var(--navy)}
+.topo .sobre{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--coral);margin:0 0 var(--s2)}
+h1{font-size:clamp(28px,4.4vw,46px);line-height:1.05;letter-spacing:-.02em;color:var(--navy);margin:0;font-weight:700}
+.topo p.lead{margin:var(--s4) 0 0;max-width:58ch;color:var(--txt)}
+.placar{display:grid;gap:var(--s2);margin:0;padding:0;list-style:none}
+.placar li{display:grid;grid-template-columns:3ch 1fr;gap:var(--s3);align-items:baseline;padding:var(--s2) 0;border-top:1px solid var(--linha)}
+.placar b{font-size:30px;line-height:1;color:var(--navy);font-variant-numeric:tabular-nums;text-align:right}
+.placar li.precisa b{color:var(--coral)}.placar li.ajustou b{color:var(--verde)}
+.fonte{font-size:13px;color:var(--mudo);margin:var(--s4) 0 0}
+.g{margin-top:var(--s7)}
+.g>header{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s5);align-items:baseline;margin-bottom:var(--s3)}
+.g h2{font-size:24px;margin:0;color:var(--navy);letter-spacing:-.01em}
+.g h2 span{display:inline-block;min-width:2ch;margin-left:var(--s2);padding:0 var(--s2);border-radius:999px;font-size:15px;font-variant-numeric:tabular-nums;text-align:center;color:var(--sup);background:var(--navy);vertical-align:middle}
+.g.precisa h2 span{background:var(--coral);color:var(--navy)}.g.ajustou h2 span{background:var(--verde)}
+.g>header p{margin:0;font-size:14px;color:var(--mudo)}
+.fr{display:grid;grid-template-columns:44px minmax(0,5fr) minmax(0,6fr);gap:var(--s3) var(--s5);padding:var(--s5) 0;border-top:1px solid var(--linha)}
+.g .fr:first-of-type{border-top:1px solid var(--navy)}
+.rank{font-size:30px;line-height:1;font-weight:700;color:var(--navy);font-variant-numeric:tabular-nums;opacity:.35}
+.precisa .rank{color:var(--coral);opacity:1}
+.quem h3{margin:0;font-size:19px;line-height:1.25;color:var(--navy)}
+.cod{margin:var(--s1) 0 var(--s3);font-size:13px;color:var(--mudo)}
+.por{margin:0 0 var(--s2);font-weight:700;max-width:52ch}
+.mudou{margin:0;font-size:15px;max-width:60ch}
+.num{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s4);margin:0;align-content:start}
+.num dt{font-size:12px;color:var(--mudo);margin-bottom:var(--s1)}
+.num dd{margin:0;font-size:20px;line-height:1.2;font-weight:700;color:var(--navy);font-variant-numeric:tabular-nums}
+.num dd.sub{font-size:13px;font-weight:400;color:var(--mudo)}
+.var{font-size:13px;font-weight:700;margin-left:2px}.var.cai{color:#C2372F}.var.sobe{color:var(--verde)}
+.num dd.alerta{font-size:13px;line-height:1.35;font-weight:700}
+.alerta.on{color:#A52A23}.alerta.off{color:var(--verde)}
+details{grid-column:2/-1;font-size:14px}
+summary{cursor:pointer;color:var(--azul);font-weight:700;width:max-content;padding:var(--s1) 0}
+summary:focus-visible{outline:2px solid var(--azul);outline-offset:3px}
+details ul{margin:var(--s2) 0 0;padding-left:var(--s4);display:grid;gap:var(--s1)}
+details ul.ev{color:var(--mudo)}
+details small{color:var(--mudo)}
+.pe{margin-top:var(--s8);display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:var(--s6);padding-top:var(--s5);border-top:2px solid var(--navy);font-size:14px}
+.pe h2{font-size:16px;margin:0 0 var(--s2);color:var(--navy)}
+.pe ul{margin:0;padding-left:var(--s4);display:grid;gap:var(--s2)}
+@media (max-width:860px){.pg{padding:var(--s6) var(--s4) var(--s7)}.topo,.g>header{grid-template-columns:1fr}.fr{grid-template-columns:36px minmax(0,1fr)}.num{grid-column:2;grid-template-columns:repeat(2,minmax(0,1fr))}details{grid-column:2}}
+@media print{body{background:#fff}details{display:none}.fr{break-inside:avoid}}
+</style></head>
+<body><div class="pg">
+<header class="topo">
+  <div>
+    <p class="sobre">UTI de Franquias · para decisão</p>
+    <h1>17 franquias em Aguardando aprovação: quem ainda precisa entrar em UTI</h1>
+    <p class="lead">Elas estão paradas nessa etapa há 21 a 33 dias. Refiz a medição de cada uma em 25/11/2026 e ordenei por prioridade. A decisão de quem entra é da Vivianny e da Rayanne.</p>
+  </div>
+  <div>
+    <ul class="placar">
+      <li class="precisa"><b>3</b><span>precisam de UTI</span></li>
+      <li><b>11</b><span>para acompanhar antes de decidir</span></li>
+      <li class="ajustou"><b>3</b><span>já ajustaram e podem sair da fila</span></li>
+    </ul>
+    <p class="fonte">Fontes: Kanban e robô da Central da UTI (dados de 25/11, 11h01), Sapron ao vivo e Stop de Crescimento (25/11, tarde). Score: ScorePulse, outubro contra setembro.</p>
+  </div>
+</header>
+<section class="g precisa"><header><h2>Precisa de UTI <span>3</span></h2><p>Alerta aceso com Score Ruim ou Regular, ou com dois sinais ao mesmo tempo.</p></header>
+<article class="fr">
+  <div class="rank">1</div>
+  <div class="quem">
+    <h3>Ana Márcia Pereira Buzzacchino</h3>
+    <p class="cod">CMC-001-GRJ · host 127 · 26 dias em Aguardando aprovação</p>
+    <p class="por">Score Ruim e em queda, carteira crítica subindo e stop de qualidade vigente.</p>
+    <p class="mudou">Entrou por 48 manutenções abertas; hoje são 37, com 15 esperando aprovação da Seazone. O Score caiu de 84,0 para 64,6 e os imóveis críticos foram de 6 para 10.</p>
+  </div>
+  <dl class="num">
+    <div><dt>Score de outubro</dt><dd>64,6 <span class="var cai">−19,5</span></dd><dd class="sub">Ruim</dd></div>
+    <div><dt>Imóveis críticos</dt><dd>10 de 58</dd><dd class="sub">17,2% da carteira</dd></div>
+    <div><dt>Manutenções abertas</dt><dd>37</dd><dd class="sub">0,64 por imóvel</dd></div>
+    <div><dt>Alerta hoje</dt><dd class="alerta on">Score Ruim (64,6) · Score caiu 19,5 pts no mês</dd></div>
+  </dl>
+  <details>
+    <summary>Ver detalhe</summary>
+    <ul>
+      <li><b>Entrou por:</b> 48 manutenções abertas (0,86 por imóvel, 4,3× a média da rede) (em Aguardando aprovação desde 30/10)</li>
+      <li><b>Score nos últimos meses:</b> 87,4 → 88,8 → 84,0 → 64,6 (classe em outubro: Ruim)</li>
+      <li><b>Manutenção:</b> 8 há mais de 30 dias; 1 com status urgente; 15 esperando aprovação da Seazone (fora da conta)</li>
+      <li><b>Ocorrências em 90 dias:</b> 28 <small>(7 nos últimos 30 dias, 21 nos 30 anteriores)</small> · graves 4 · gravíssimas 0</li>
+      <li><b>Notas:</b> Airbnb no mês 4,61 · Airbnb em 90 dias 4,66 · limpeza 4,52 · check-in 4,55 · Booking 4,64</li>
+      <li><b>Stop de crescimento:</b> qualidade, exceto mesmo prédio, desde 13/03/2026</li>
+      <li><b>Planos que o diagnóstico da Central sugere:</b> manutencao, ocorrencias, avaliacoes, anuncios, estrutura</li>
+    </ul>
+    <ul class="ev"><li><b>manutencao:</b> 37 manutenção(ões) aberta(s) no Sapron em 25 imóvel(is) (1 urgente(s)); 1 imóvel(is) com manutenção urgente aberta há mais de 7 dias; 6 imóvel(is) com manutenção aberta há mais de 30 dias; 9 ocorrências de Manutenção em 90 dias</li><li><b>ocorrencias:</b> 4 ocorrências graves em 90 dias; Nota de limpeza do mês 4,52; Nota de check-in do mês 4,55</li><li><b>avaliacoes:</b> Nota Booking do mês 4,64, entre as 10 piores da rede</li><li><b>anuncios:</b> 3 imóveis críticos com a pior nota em precisão do anúncio</li><li><b>estrutura:</b> Aderência aos processos no Score entre os 10% piores (11,66)</li></ul>
+  </details>
+</article>
+<article class="fr">
+  <div class="rank">2</div>
+  <div class="quem">
+    <h3>Kathellyne Soares de Moraes</h3>
+    <p class="cod">UBA-002-CEN · host 60 · 21 dias em Aguardando aprovação</p>
+    <p class="por">Dois sinais ao mesmo tempo: carteira crítica de 28,6% e 69 manutenções abertas.</p>
+    <p class="mudou">Entrou por 71 manutenções; hoje são 69, com 3 urgentes e 16 abertas há mais de 30 dias. As ocorrências subiram de 1 para 10 nos últimos 30 dias e a nota Airbnb de 90 dias está em 4,59.</p>
+  </div>
+  <dl class="num">
+    <div><dt>Score de outubro</dt><dd>80,2 <span class="var cai">−9,9</span></dd><dd class="sub">Bom</dd></div>
+    <div><dt>Imóveis críticos</dt><dd>6 de 21</dd><dd class="sub">28,6% da carteira</dd></div>
+    <div><dt>Manutenções abertas</dt><dd>69</dd><dd class="sub">3,29 por imóvel</dd></div>
+    <div><dt>Alerta hoje</dt><dd class="alerta on">28,6% da carteira crítica · 69 manutenções abertas (3,29 por imóvel, 9,4× a média da rede)</dd></div>
+  </dl>
+  <details>
+    <summary>Ver detalhe</summary>
+    <ul>
+      <li><b>Entrou por:</b> 71 manutenções abertas (3,38 por imóvel, 17,6× a média da rede) (em Aguardando aprovação desde 04/11)</li>
+      <li><b>Score nos últimos meses:</b> 73,8 → 89,9 → 90,0 → 80,2 (classe em outubro: Bom)</li>
+      <li><b>Manutenção:</b> 16 há mais de 30 dias; 3 com status urgente; 6 esperando aprovação da Seazone (fora da conta)</li>
+      <li><b>Ocorrências em 90 dias:</b> 11 <small>(10 nos últimos 30 dias, 1 nos 30 anteriores)</small> · graves 0 · gravíssimas 0</li>
+      <li><b>Notas:</b> Airbnb no mês 4,62 · Airbnb em 90 dias 4,59 · limpeza 4,68 · check-in 4,76 · Booking não medido</li>
+      <li><b>Stop de crescimento:</b> sem stop ativo</li>
+      <li><b>Planos que o diagnóstico da Central sugere:</b> manutencao, avaliacoes</li>
+    </ul>
+    <ul class="ev"><li><b>manutencao:</b> 69 manutenção(ões) aberta(s) no Sapron em 17 imóvel(is) (3 urgente(s)); 3,29 manutenções abertas por imóvel (rede: 0,35); 3 imóvel(is) com manutenção urgente aberta há mais de 7 dias; 1 imóvel(is) com manutenção aberta há mais de 30 dias; 7 ocorrências de Manutenção em 90 dias</li><li><b>avaliacoes:</b> 28,6% da carteira crítica (6 de 21 imóveis)</li></ul>
+  </details>
+</article>
+<article class="fr">
+  <div class="rank">3</div>
+  <div class="quem">
+    <h3>José Fernando de Campos</h3>
+    <p class="cod">CGH-003-MOM · host 215 · 30 dias em Aguardando aprovação</p>
+    <p class="por">Score Regular, em queda há três meses, com manutenção 5,7 vezes a média da rede.</p>
+    <p class="mudou">Entrou por 59 manutenções abertas; hoje são 36, das quais 29 abertas há mais de 30 dias. Foram 17 ocorrências em 90 dias, 2 nos últimos 30.</p>
+  </div>
+  <dl class="num">
+    <div><dt>Score de outubro</dt><dd>78,0 <span class="var cai">−2,4</span></dd><dd class="sub">Regular</dd></div>
+    <div><dt>Imóveis críticos</dt><dd>3 de 18</dd><dd class="sub">16,7% da carteira</dd></div>
+    <div><dt>Manutenções abertas</dt><dd>36</dd><dd class="sub">2,00 por imóvel</dd></div>
+    <div><dt>Alerta hoje</dt><dd class="alerta on">Score Regular (78) · 36 manutenções abertas (2 por imóvel, 5,7× a média da rede)</dd></div>
+  </dl>
+  <details>
+    <summary>Ver detalhe</summary>
+    <ul>
+      <li><b>Entrou por:</b> 59 manutenções abertas (3,28 por imóvel, 15,3× a média da rede) (em Aguardando aprovação desde 26/10)</li>
+      <li><b>Score nos últimos meses:</b> 97,7 → 88,8 → 80,4 → 78,0 (classe em outubro: Regular)</li>
+      <li><b>Manutenção:</b> 29 há mais de 30 dias; 0 com status urgente; 10 esperando aprovação da Seazone (fora da conta)</li>
+      <li><b>Ocorrências em 90 dias:</b> 17 <small>(2 nos últimos 30 dias, 15 nos 30 anteriores)</small> · graves 4 · gravíssimas 0</li>
+      <li><b>Notas:</b> Airbnb no mês 4,76 · Airbnb em 90 dias 4,66 · limpeza 4,80 · check-in 4,50 · Booking 4,83</li>
+      <li><b>Stop de crescimento:</b> sem stop ativo</li>
+      <li><b>Planos que o diagnóstico da Central sugere:</b> manutencao, ocorrencias</li>
+    </ul>
+    <ul class="ev"><li><b>manutencao:</b> 36 manutenção(ões) aberta(s) no Sapron em 17 imóvel(is); 2 manutenções abertas por imóvel (rede: 0,35); 14 imóvel(is) com manutenção aberta há mais de 30 dias; 10 ocorrências de Manutenção em 90 dias</li><li><b>ocorrencias:</b> 4 ocorrências graves em 90 dias; Nota de check-in do mês 4,5; 9 de 17 imóveis com check-in abaixo de 4,6 no Airbnb</li></ul>
+  </details>
+</article></section><section class="g acompanhar"><header><h2>Acompanhar antes de decidir <span>11</span></h2><p>Alerta aceso por um sinal só, ou sem alerta mas no limite da régua ou com sinal que a régua não enxerga.</p></header>
+<article class="fr">
+  <div class="rank">4</div>
+  <div class="quem">
+    <h3>Lucas Abel da Silveira</h3>
+    <p class="cod">GPB-003-PDO · host 286 · 33 dias em Aguardando aprovação · reincidente</p>
+    <p class="por">Sem alerta na Central porque a carteira de 8 imóveis fica abaixo dos pisos da régua. Recebeu stop de qualidade em 25/11 por nota 4,40 em 10 avaliações.</p>
+    <p class="mudou">Entrou por queda de 31 pontos; o Score estabilizou em 90,6. A nota Airbnb de 90 dias é 4,40 e 6 das 12 manutenções têm mais de 30 dias. Reincidente.</p>
+  </div>
+  <dl class="num">
+    <div><dt>Score de outubro</dt><dd>90,6 <span class="var sobe">+1,5</span></dd><dd class="sub">Bom</dd></div>
+    <div><dt>Imóveis críticos</dt><dd>0 de 8</dd><dd class="sub">0,0% da carteira</dd></div>
+    <div><dt>Manutenções abertas</dt><dd>12</dd><dd class="sub">1,50 por imóvel</dd></div>
+    <div><dt>Alerta hoje</dt><dd class="alerta off">Sem alerta</dd></div>
+  </dl>
+  <details>
+    <summary>Ver detalhe</summary>
+    <ul>
+      <li><b>Entrou por:</b> Score caiu 31 pts no mês (em Aguardando aprovação desde 23/10)</li>
+      <li><b>Score nos últimos meses:</b> 116,1 → 120,1 → 89,1 → 90,6 (classe em outubro: Bom)</li>
+      <li><b>Manutenção:</b> 6 há mais de 30 dias; 0 com status urgente; 1 esperando aprovação da Seazone (fora da conta)</li>
+      <li><b>Ocorrências em 90 dias:</b> 1 <small>(0 nos últimos 30 dias, 1 nos 30 anteriores)</small> · graves 0 · gravíssimas 0</li>
+      <li><b>Notas:</b> Airbnb no mês não medido · Airbnb em 90 dias 4,40 · limpeza não medido · check-in não medido · Booking não medido</li>
+      <li><b>Stop de crescimento:</b> qualidade, exceto mesmo prédio, aplicado em 25/11/2026 (nota 4,40 em 10 avaliações)</li>
+      <li><b>Planos que o diagnóstico da Central sugere:</b> manutencao</li>
+    </ul>
+    <ul class="ev"><li><b>manutencao:</b> 12 manutenção(ões) aberta(s) no Sapron em 6 imóvel(is); 1,5 manutenções abertas por imóvel (rede: 0,35); 5 imóvel(is) com manutenção aberta há mais de 30 dias</li></ul>
+  </details>
+</article>
+<article class="fr">
+  <div class="rank">5</div>
+  <div class="quem">
+    <h3>Glauciene Sacramento Santos</h3>
+    <p class="cod">MRU-003-BRG · host 231 · 33 dias em Aguardando aprovação</p>
+    <p class="por">Um sinal: segunda queda seguida de Score, 27 pontos em dois meses.</p>
+    <p class="mudou">Entrou por queda de 12,1 pontos; em outubro caiu mais 14,9 (110,6, 98,5, 83,6). Segue classificada como Bom. As 11 manutenções abertas são todas de novembro.</p>
+  </div>
+  <dl class="num">
+    <div><dt>Score de outubro</dt><dd>83,6 <span class="var cai">−14,9</span></dd><dd class="sub">Bom</dd></div>
+    <div><dt>Imóveis críticos</dt><dd>4 de 30</dd><dd class="sub">13,3% da carteira</dd></div>
+    <div><dt>Manutenções abertas</dt><dd>11</dd><dd class="sub">0,40 por imóvel</dd></div>
+    <div><dt>Alerta hoje</dt><dd class="alerta on">Score caiu 14,9 pts no mês</dd></div>
+  </dl>
+  <details>
+    <summary>Ver detalhe</summary>
+    <ul>
+      <li><b>Entrou por:</b> Score caiu 12,1 pts no mês (em Aguardando aprovação desde 23/10)</li>
+      <li><b>Score nos últimos meses:</b> 105,0 → 110,6 → 98,5 → 83,6 (classe em outubro: Bom)</li>
+      <li><b>Manutenção:</b> 0 há mais de 30 dias; 0 com status urgente; 0 esperando aprovação da Seazone (fora da conta)</li>
+      <li><b>Ocorrências em 90 dias:</b> 2 <small>(0 nos últimos 30 dias, 2 nos 30 anteriores)</small> · graves 0 · gravíssimas 0</li>
+      <li><b>Notas:</b> Airbnb no mês 4,82 · Airbnb em 90 dias 4,78 · limpeza 4,47 · check-in 4,37 · Booking não medido</li>
+      <li><b>Stop de crescimento:</b> sem stop ativo</li>
+      <li><b>Planos que o diagnóstico da Central sugere:</b> manutencao, ocorrencias</li>
+    </ul>
+    <ul class="ev"><li><b>manutencao:</b> 12 manutenção(ões) aberta(s) no Sapron em 12 imóvel(is)</li><li><b>ocorrencias:</b> Nota de limpeza do mês 4,47; Nota de check-in do mês 4,37; 8 de 21 imóveis com limpeza abaixo de 4,6 no Airbnb; 7 de 21 imóveis com check-in abaixo de 4,6 no Airbnb</li></ul>
+  </details>
+</article>
+<article class="fr">
+  <div class="rank">6</div>
+  <div class="quem">
+    <h3>Ricardo Portella Junior</h3>
+    <p class="cod">GPI-001-CEN · host 128 · 26 dias em Aguardando aprovação</p>
+    <p class="por">Um sinal: manutenção, e piorou desde a entrada.</p>
+    <p class="mudou">Entrou com 24 manutenções abertas; hoje são 40, com 13 há mais de 30 dias e 2 urgentes. Carteira crítica em 17,1%, perto do limite de 20%.</p>
+  </div>
+  <dl class="num">
+    <div><dt>Score de outubro</dt><dd>93,7 <span class="var cai">−2,5</span></dd><dd class="sub">Bom</dd></div>
+    <div><dt>Imóveis críticos</dt><dd>6 de 35</dd><dd class="sub">17,1% da carteira</dd></div>
+    <div><dt>Manutenções abertas</dt><dd>40</dd><dd class="sub">1,14 por imóvel</dd></div>
+    <div><dt>Alerta hoje</dt><dd class="alerta on">40 manutenções abertas (1,14 por imóvel, 3,2× a média da rede)</dd></div>
+  </dl>
+  <details>
+    <summary>Ver detalhe</summary>
+    <ul>
+      <li><b>Entrou por:</b> 24 manutenções abertas (0,67 por imóvel, 3,3× a média da rede) (em Aguardando aprovação desde 30/10)</li>
+      <li><b>Score nos últimos meses:</b> 96,3 → 99,8 → 96,2 → 93,7 (classe em outubro: Bom)</li>
+      <li><b>Manutenção:</b> 13 há mais de 30 dias; 2 com status urgente; 3 esperando aprovação da Seazone (fora da conta)</li>
+      <li><b>Ocorrências em 90 dias:</b> 4 <small>(1 nos últimos 30 dias, 3 nos 30 anteriores)</small> · graves 1 · gravíssimas 0</li>
+      <li><b>Notas:</b> Airbnb no mês 4,74 · Airbnb em 90 dias 4,67 · limpeza 4,70 · check-in 4,86 · Booking não medido</li>
+      <li><b>Stop de crescimento:</b> sem stop ativo</li>
+      <li><b>Planos que o diagnóstico da Central sugere:</b> manutencao, anuncios, estrutura</li>
+    </ul>
+    <ul class="ev"><li><b>manutencao:</b> 40 manutenção(ões) aberta(s) no Sapron em 26 imóvel(is) (2 urgente(s)); 1,14 manutenções abertas por imóvel (rede: 0,35); 2 imóvel(is) com manutenção urgente aberta há mais de 7 dias; 11 imóvel(is) com manutenção aberta há mais de 30 dias</li><li><b>anuncios:</b> 3 imóveis críticos com a pior nota em precisão do anúncio</li><li><b>estrutura:</b> Aderência aos processos no Score entre os 10% piores (12,31)</li></ul>
+  </details>
+</article>
+<article class="fr">
+  <div class="rank">7</div>
+  <div class="quem">
+    <h3>Vistas Gestão Rural</h3>
+    <p class="cod">ANT-001-VDA · host 32 · 33 dias em Aguardando aprovação</p>
+    <p class="por">Um sinal: 67 manutenções abertas, todas há mais de 30 dias.</p>
+    <p class="mudou">Entrou com 67 manutenções e segue com 67; a mais antiga é de 25/06. Fora isso está bem: Score Bom e 1 imóvel crítico em 44.</p>
+  </div>
+  <dl class="num">
+    <div><dt>Score de outubro</dt><dd>89,4 <span class="var cai">−3,3</span></dd><dd class="sub">Bom</dd></div>
+    <div><dt>Imóveis críticos</dt><dd>1 de 44</dd><dd class="sub">2,3% da carteira</dd></div>
+    <div><dt>Manutenções abertas</dt><dd>67</dd><dd class="sub">1,55 por imóvel</dd></div>
+    <div><dt>Alerta hoje</dt><dd class="alerta on">68 manutenções abertas (1,55 por imóvel, 4,4× a média da rede)</dd></div>
+  </dl>
+  <details>
+    <summary>Ver detalhe</summary>
+    <ul>
+      <li><b>Entrou por:</b> 67 manutenções abertas (1,52 por imóvel, 6,4× a média da rede) (em Aguardando aprovação desde 23/10)</li>
+      <li><b>Score nos últimos meses:</b> 90,7 → 94,7 → 92,7 → 89,4 (classe em outubro: Bom)</li>
+      <li><b>Manutenção:</b> 67 há mais de 30 dias; 0 com status urgente; 2 esperando aprovação da Seazone (fora da conta)</li>
+      <li><b>Ocorrências em 90 dias:</b> 4 <small>(2 nos últimos 30 dias, 2 nos 30 anteriores)</small> · graves 1 · gravíssimas 0</li>
+      <li><b>Notas:</b> Airbnb no mês 4,91 · Airbnb em 90 dias 4,89 · limpeza 4,89 · check-in 4,78 · Booking não medido</li>
+      <li><b>Stop de crescimento:</b> grande operação, desde 18/09/2026</li>
+      <li><b>Planos que o diagnóstico da Central sugere:</b> manutencao, estrutura</li>
+    </ul>
+    <ul class="ev"><li><b>manutencao:</b> 68 manutenção(ões) aberta(s) no Sapron em 42 imóvel(is) (1 urgente(s)); 1,55 manutenções abertas por imóvel (rede: 0,35); 1 imóvel(is) com manutenção urgente aberta há mais de 7 dias; 42 imóvel(is) com manutenção aberta há mais de 30 dias</li><li><b>estrutura:</b> Operação local no Score entre os 10% piores (12,8)</li></ul>
+  </details>
+</article>
+<article class="fr">
+  <div class="rank">8</div>
+  <div class="quem">
+    <h3>Lucas Taniguti Bertarelli</h3>
+    <p class="cod">CGH-001-MOM · host 147 · 24 dias em Aguardando aprovação</p>
+    <p class="por">Um sinal: queda de 12,1 pontos no Score. O motivo de entrada foi resolvido.</p>
+    <p class="mudou">Entrou por 33 manutenções abertas; hoje são 7. O alerta agora é a queda de 102,0 para 89,9 e 1 ocorrência gravíssima em 90 dias.</p>
+  </div>
+  <dl class="num">
+    <div><dt>Score de outubro</dt><dd>89,9 <span class="var cai">−12,1</span></dd><dd class="sub">Bom</dd></div>
+    <div><dt>Imóveis críticos</dt><dd>4 de 49</dd><dd class="sub">8,2% da carteira</dd></div>
+    <div><dt>Manutenções abertas</dt><dd>7</dd><dd class="sub">0,18 por imóvel</dd></div>
+    <div><dt>Alerta hoje</dt><dd class="alerta on">Score caiu 12,1 pts no mês</dd></div>
+  </dl>
+  <details>
+    <summary>Ver detalhe</summary>
+    <ul>
+      <li><b>Entrou por:</b> 33 manutenções abertas (0,63 por imóvel, 3,1× a média da rede) (em Aguardando aprovação desde 01/11)</li>
+      <li><b>Score nos últimos meses:</b> 99,1 → 96,8 → 102,0 → 89,9 (classe em outubro: Bom)</li>
+      <li><b>Manutenção:</b> 0 há mais de 30 dias; 0 com status urgente; 8 esperando aprovação da Seazone (fora da conta)</li>
+      <li><b>Ocorrências em 90 dias:</b> 7 <small>(3 nos últimos 30 dias, 4 nos 30 anteriores)</small> · graves 2 · gravíssimas 1</li>
+      <li><b>Notas:</b> Airbnb no mês 4,81 · Airbnb em 90 dias 4,82 · limpeza 4,68 · check-in 4,85 · Booking 4,70</li>
+      <li><b>Stop de crescimento:</b> a pedido da franquia (GOPs), desde 09/04/2026</li>
+      <li><b>Planos que o diagnóstico da Central sugere:</b> ocorrencias, manutencao, avaliacoes</li>
+    </ul>
+    <ul class="ev"><li><b>ocorrencias:</b> 1 ocorrência(s) gravíssima(s) em 90 dias</li><li><b>manutencao:</b> 9 manutenção(ões) aberta(s) no Sapron em 9 imóvel(is); 3 ocorrências de Manutenção em 90 dias</li><li><b>avaliacoes:</b> Nota Booking do mês 4,7, entre as 10 piores da rede</li></ul>
+  </details>
+</article>
+<article class="fr">
+  <div class="rank">9</div>
+  <div class="quem">
+    <h3>Reinaldo Jorge Fernandes</h3>
+    <p class="cod">BCB-005-CEN · host 278 · 26 dias em Aguardando aprovação</p>
+    <p class="por">Um sinal: carteira crítica de 31,3%, a maior do grupo.</p>
+    <p class="mudou">Entrou com 37,5% da carteira crítica; hoje são 5 de 16 imóveis. O Score subiu de 84,7 para 87,0 e há 2 manutenções abertas.</p>
+  </div>
+  <dl class="num">
+    <div><dt>Score de outubro</dt><dd>87,0 <span class="var sobe">+2,3</span></dd><dd class="sub">Bom</dd></div>
+    <div><dt>Imóveis críticos</dt><dd>5 de 16</dd><dd class="sub">31,3% da carteira</dd></div>
+    <div><dt>Manutenções abertas</dt><dd>2</dd><dd class="sub">0,13 por imóvel</dd></div>
+    <div><dt>Alerta hoje</dt><dd class="alerta on">31,3% da carteira crítica</dd></div>
+  </dl>
+  <details>
+    <summary>Ver detalhe</summary>
+    <ul>
+      <li><b>Entrou por:</b> 37,5% da carteira crítica (em Aguardando aprovação desde 30/10)</li>
+      <li><b>Score nos últimos meses:</b> 82,0 → 81,7 → 84,7 → 87,0 (classe em outubro: Bom)</li>
+      <li><b>Manutenção:</b> 2 há mais de 30 dias; 0 com status urgente; 4 esperando aprovação da Seazone (fora da conta)</li>
+      <li><b>Ocorrências em 90 dias:</b> 2 <small>(1 nos últimos 30 dias, 1 nos 30 anteriores)</small> · graves 1 · gravíssimas 0</li>
+      <li><b>Notas:</b> Airbnb no mês 4,94 · Airbnb em 90 dias 4,70 · limpeza 4,82 · check-in 5,00 · Booking 4,80</li>
+      <li><b>Stop de crescimento:</b> sem stop ativo</li>
+      <li><b>Planos que o diagnóstico da Central sugere:</b> manutencao, ocorrencias, avaliacoes, estrutura</li>
+    </ul>
+    <ul class="ev"><li><b>manutencao:</b> 2 manutenção(ões) aberta(s) no Sapron em 2 imóvel(is); 2 imóvel(is) com manutenção aberta há mais de 30 dias</li><li><b>ocorrencias:</b> 5 de 15 imóveis com limpeza abaixo de 4,6 no Airbnb</li><li><b>avaliacoes:</b> 31,3% da carteira crítica (5 de 16 imóveis)</li><li><b>estrutura:</b> Operação local no Score entre os 10% piores (13,6)</li></ul>
+  </details>
+</article>
+<article class="fr">
+  <div class="rank">10</div>
+  <div class="quem">
+    <h3>Débora Renata Gomes Soares</h3>
+    <p class="cod">REC-002-BOV · host 246 · 30 dias em Aguardando aprovação</p>
+    <p class="por">Sem alerta só porque o Score Excelente sobe a régua de carteira crítica para 30%.</p>
+    <p class="mudou">Entrou com 20% da carteira crítica; hoje são 26,7% (4 de 15). O Score subiu de 84,1 para 108,8 e não há manutenção aberta.</p>
+  </div>
+  <dl class="num">
+    <div><dt>Score de outubro</dt><dd>108,8 <span class="var sobe">+24,6</span></dd><dd class="sub">Excelente</dd></div>
+    <div><dt>Imóveis críticos</dt><dd>4 de 15</dd><dd class="sub">26,7% da carteira</dd></div>
+    <div><dt>Manutenções abertas</dt><dd>0</dd><dd class="sub">0,00 por imóvel</dd></div>
+    <div><dt>Alerta hoje</dt><dd class="alerta off">Sem alerta</dd></div>
+  </dl>
+  <details>
+    <summary>Ver detalhe</summary>
+    <ul>
+      <li><b>Entrou por:</b> 20% da carteira crítica (em Aguardando aprovação desde 26/10)</li>
+      <li><b>Score nos últimos meses:</b> 75,9 → 79,0 → 84,1 → 108,8 (classe em outubro: Excelente)</li>
+      <li><b>Manutenção:</b> 0 há mais de 30 dias; 0 com status urgente; 1 esperando aprovação da Seazone (fora da conta)</li>
+      <li><b>Ocorrências em 90 dias:</b> não medido · graves 0 · gravíssimas 0</li>
+      <li><b>Notas:</b> Airbnb no mês 4,83 · Airbnb em 90 dias 4,74 · limpeza 4,96 · check-in 4,93 · Booking não medido</li>
+      <li><b>Stop de crescimento:</b> sem stop ativo</li>
+      <li><b>Planos que o diagnóstico da Central sugere:</b> avaliacoes</li>
+    </ul>
+    <ul class="ev"><li><b>avaliacoes:</b> 26,7% da carteira crítica (4 de 15 imóveis)</li></ul>
+  </details>
+</article>
+<article class="fr">
+  <div class="rank">11</div>
+  <div class="quem">
+    <h3>IAM Consultoria</h3>
+    <p class="cod">BSB-003-ASN · host 252 · 26 dias em Aguardando aprovação</p>
+    <p class="por">Sem alerta por 0,3 ponto: 19,7% de carteira crítica, e a régua acende em 20%.</p>
+    <p class="mudou">Entrou com 20% da carteira crítica; hoje são 14 de 71 imóveis. O Score recua devagar há dois meses (96,1, 87,9, 86,0).</p>
+  </div>
+  <dl class="num">
+    <div><dt>Score de outubro</dt><dd>86,0 <span class="var cai">−1,8</span></dd><dd class="sub">Bom</dd></div>
+    <div><dt>Imóveis críticos</dt><dd>14 de 71</dd><dd class="sub">19,7% da carteira</dd></div>
+    <div><dt>Manutenções abertas</dt><dd>3</dd><dd class="sub">0,04 por imóvel</dd></div>
+    <div><dt>Alerta hoje</dt><dd class="alerta off">Sem alerta</dd></div>
+  </dl>
+  <details>
+    <summary>Ver detalhe</summary>
+    <ul>
+      <li><b>Entrou por:</b> 20% da carteira crítica (em Aguardando aprovação desde 30/10)</li>
+      <li><b>Score nos últimos meses:</b> 90,7 → 96,1 → 87,9 → 86,0 (classe em outubro: Bom)</li>
+      <li><b>Manutenção:</b> 0 há mais de 30 dias; 0 com status urgente; 10 esperando aprovação da Seazone (fora da conta)</li>
+      <li><b>Ocorrências em 90 dias:</b> 5 <small>(2 nos últimos 30 dias, 3 nos 30 anteriores)</small> · graves 3 · gravíssimas 0</li>
+      <li><b>Notas:</b> Airbnb no mês 4,53 · Airbnb em 90 dias 4,64 · limpeza 4,54 · check-in 4,70 · Booking 4,79</li>
+      <li><b>Stop de crescimento:</b> sem stop ativo</li>
+      <li><b>Planos que o diagnóstico da Central sugere:</b> manutencao, ocorrencias, avaliacoes, anuncios</li>
+    </ul>
+    <ul class="ev"><li><b>manutencao:</b> 3 manutenção(ões) aberta(s) no Sapron em 3 imóvel(is)</li><li><b>ocorrencias:</b> 3 ocorrências graves em 90 dias; Nota de limpeza do mês 4,54</li><li><b>avaliacoes:</b> Nota Airbnb do mês 4,53, entre as 10 piores da rede</li><li><b>anuncios:</b> 5 imóveis críticos com a pior nota em precisão do anúncio</li></ul>
+  </details>
+</article>
+<article class="fr">
+  <div class="rank">12</div>
+  <div class="quem">
+    <h3>Juliana Lemos da Silva</h3>
+    <p class="cod">FLN-002-INGN · host 229 · 33 dias em Aguardando aprovação</p>
+    <p class="por">Sem alerta, mas a 1 imóvel do limite: carteira crítica em 18,2%.</p>
+    <p class="mudou">Entrou por queda de 13,1 pontos; o Score voltou de 80,7 para 90,1. São 4 críticos em 22. Há 19 manutenções esperando aprovação da Seazone e 5 abertas.</p>
+  </div>
+  <dl class="num">
+    <div><dt>Score de outubro</dt><dd>90,1 <span class="var sobe">+9,4</span></dd><dd class="sub">Bom</dd></div>
+    <div><dt>Imóveis críticos</dt><dd>4 de 22</dd><dd class="sub">18,2% da carteira</dd></div>
+    <div><dt>Manutenções abertas</dt><dd>5</dd><dd class="sub">0,23 por imóvel</dd></div>
+    <div><dt>Alerta hoje</dt><dd class="alerta off">Sem alerta</dd></div>
+  </dl>
+  <details>
+    <summary>Ver detalhe</summary>
+    <ul>
+      <li><b>Entrou por:</b> Score caiu 13,1 pts no mês (em Aguardando aprovação desde 23/10)</li>
+      <li><b>Score nos últimos meses:</b> 97,8 → 93,8 → 80,7 → 90,1 (classe em outubro: Bom)</li>
+      <li><b>Manutenção:</b> 1 há mais de 30 dias; 0 com status urgente; 19 esperando aprovação da Seazone (fora da conta)</li>
+      <li><b>Ocorrências em 90 dias:</b> 1 <small>(0 nos últimos 30 dias, 1 nos 30 anteriores)</small> · graves 1 · gravíssimas 0</li>
+      <li><b>Notas:</b> Airbnb no mês 4,93 · Airbnb em 90 dias 4,73 · limpeza 4,74 · check-in 4,95 · Booking 4,82</li>
+      <li><b>Stop de crescimento:</b> sem stop ativo</li>
+      <li><b>Planos que o diagnóstico da Central sugere:</b> manutencao</li>
+    </ul>
+    <ul class="ev"><li><b>manutencao:</b> 5 manutenção(ões) aberta(s) no Sapron em 5 imóvel(is); 1 imóvel(is) com manutenção aberta há mais de 30 dias</li></ul>
+  </details>
+</article>
+<article class="fr">
+  <div class="rank">13</div>
+  <div class="quem">
+    <h3>Laura Vitoria da Rosa de Almeida</h3>
+    <p class="cod">FLN-006-CAM · host 337 · 33 dias em Aguardando aprovação</p>
+    <p class="por">Alerta de manutenção, mas 27 das 36 abertas vieram de outra franquia.</p>
+    <p class="mudou">As 27 herdadas eram da Ana Carolina Assmus Barski, em distrato. Abertas no nome da própria franquia são 9. Está em Integração no Score. A nota Airbnb de 90 dias, 4,57, é problema dela e está abaixo de 4,6.</p>
+  </div>
+  <dl class="num">
+    <div><dt>Score de outubro</dt><dd>92,1 </dd><dd class="sub">Integração</dd></div>
+    <div><dt>Imóveis críticos</dt><dd>2 de 17</dd><dd class="sub">11,8% da carteira</dd></div>
+    <div><dt>Manutenções abertas</dt><dd>36</dd><dd class="sub">2,12 por imóvel</dd></div>
+    <div><dt>Alerta hoje</dt><dd class="alerta on">36 manutenções abertas (2,12 por imóvel, 6× a média da rede)</dd></div>
+  </dl>
+  <details>
+    <summary>Ver detalhe</summary>
+    <ul>
+      <li><b>Entrou por:</b> 41 manutenções abertas (2,56 por imóvel, 10,8× a média da rede) (em Aguardando aprovação desde 23/10)</li>
+      <li><b>Score nos últimos meses:</b> 92,1 (classe em outubro: Integração)</li>
+      <li><b>Manutenção:</b> 27 herdadas de Ana Carolina Assmus Barski (em distrato); 9 abertas no nome da própria franquia; 31 há mais de 30 dias; 0 com status urgente; 2 esperando aprovação da Seazone (fora da conta)</li>
+      <li><b>Ocorrências em 90 dias:</b> não medido · graves 0 · gravíssimas 0</li>
+      <li><b>Notas:</b> Airbnb no mês 4,58 · Airbnb em 90 dias 4,57 · limpeza 4,83 · check-in 4,75 · Booking não medido</li>
+      <li><b>Stop de crescimento:</b> sem stop ativo</li>
+      <li><b>Planos que o diagnóstico da Central sugere:</b> manutencao, avaliacoes, estrutura</li>
+    </ul>
+    <ul class="ev"><li><b>manutencao:</b> 36 manutenção(ões) aberta(s) no Sapron em 12 imóvel(is) (1 urgente(s)); 2,12 manutenções abertas por imóvel (rede: 0,35); 1 imóvel(is) com manutenção urgente aberta há mais de 7 dias; 11 imóvel(is) com manutenção aberta há mais de 30 dias</li><li><b>avaliacoes:</b> Nota Airbnb do mês 4,58, entre as 10 piores da rede</li><li><b>estrutura:</b> Operação local no Score entre os 10% piores (12)</li></ul>
+  </details>
+</article>
+<article class="fr">
+  <div class="rank">14</div>
+  <div class="quem">
+    <h3>Diego Bezerra da Silva</h3>
+    <p class="cod">BOM-002-BBS · host 254 · 33 dias em Aguardando aprovação</p>
+    <p class="por">Alerta de manutenção, mas 32 das 44 abertas vieram de outra franquia.</p>
+    <p class="mudou">As 32 herdadas eram do Patrick Josoe Brando, em distrato. Abertas no nome da própria franquia são 12. Score Excelente (110,4) e subindo. Sem as herdadas não haveria alerta.</p>
+  </div>
+  <dl class="num">
+    <div><dt>Score de outubro</dt><dd>110,4 <span class="var sobe">+8,1</span></dd><dd class="sub">Excelente</dd></div>
+    <div><dt>Imóveis críticos</dt><dd>3 de 24</dd><dd class="sub">12,5% da carteira</dd></div>
+    <div><dt>Manutenções abertas</dt><dd>44</dd><dd class="sub">1,83 por imóvel</dd></div>
+    <div><dt>Alerta hoje</dt><dd class="alerta on">44 manutenções abertas (1,83 por imóvel, 5,2× a média da rede)</dd></div>
+  </dl>
+  <details>
+    <summary>Ver detalhe</summary>
+    <ul>
+      <li><b>Entrou por:</b> 41 manutenções abertas (1,78 por imóvel, 7,5× a média da rede) (em Aguardando aprovação desde 23/10)</li>
+      <li><b>Score nos últimos meses:</b> 100,7 → 109,7 → 102,4 → 110,4 (classe em outubro: Excelente)</li>
+      <li><b>Manutenção:</b> 32 herdadas de Patrick Josoe Brando (em distrato); 12 abertas no nome da própria franquia; 33 há mais de 30 dias; 0 com status urgente; 0 esperando aprovação da Seazone (fora da conta)</li>
+      <li><b>Ocorrências em 90 dias:</b> 1 <small>(1 nos últimos 30 dias, 0 nos 30 anteriores)</small> · graves 0 · gravíssimas 0</li>
+      <li><b>Notas:</b> Airbnb no mês 4,78 · Airbnb em 90 dias 4,76 · limpeza 4,92 · check-in 4,96 · Booking não medido</li>
+      <li><b>Stop de crescimento:</b> sem stop ativo</li>
+      <li><b>Planos que o diagnóstico da Central sugere:</b> manutencao</li>
+    </ul>
+    <ul class="ev"><li><b>manutencao:</b> 44 manutenção(ões) aberta(s) no Sapron em 12 imóvel(is); 1,83 manutenções abertas por imóvel (rede: 0,35); 9 imóvel(is) com manutenção aberta há mais de 30 dias</li></ul>
+  </details>
+</article></section><section class="g ajustou"><header><h2>Já ajustou <span>3</span></h2><p>Sem alerta hoje: o motivo de entrada saiu da régua.</p></header>
+<article class="fr">
+  <div class="rank">15</div>
+  <div class="quem">
+    <h3>Eduardo José Pereira Santos</h3>
+    <p class="cod">SSA-002-ITP · host 245 · 30 dias em Aguardando aprovação</p>
+    <p class="por">Saiu da régua: carteira crítica caiu de 26,3% para 11,1%.</p>
+    <p class="mudou">Hoje são 2 imóveis críticos em 18. Score Excelente (98,3), em alta.</p>
+  </div>
+  <dl class="num">
+    <div><dt>Score de outubro</dt><dd>98,3 <span class="var sobe">+8,2</span></dd><dd class="sub">Excelente</dd></div>
+    <div><dt>Imóveis críticos</dt><dd>2 de 18</dd><dd class="sub">11,1% da carteira</dd></div>
+    <div><dt>Manutenções abertas</dt><dd>9</dd><dd class="sub">0,50 por imóvel</dd></div>
+    <div><dt>Alerta hoje</dt><dd class="alerta off">Sem alerta</dd></div>
+  </dl>
+  <details>
+    <summary>Ver detalhe</summary>
+    <ul>
+      <li><b>Entrou por:</b> 26,3% da carteira crítica (em Aguardando aprovação desde 26/10)</li>
+      <li><b>Score nos últimos meses:</b> 88,3 → 93,9 → 90,1 → 98,3 (classe em outubro: Excelente)</li>
+      <li><b>Manutenção:</b> 0 há mais de 30 dias; 0 com status urgente; 4 esperando aprovação da Seazone (fora da conta)</li>
+      <li><b>Ocorrências em 90 dias:</b> 4 <small>(1 nos últimos 30 dias, 3 nos 30 anteriores)</small> · graves 1 · gravíssimas 0</li>
+      <li><b>Notas:</b> Airbnb no mês 4,81 · Airbnb em 90 dias 4,79 · limpeza 4,88 · check-in 4,82 · Booking 4,91</li>
+      <li><b>Stop de crescimento:</b> sem stop ativo</li>
+      <li><b>Planos que o diagnóstico da Central sugere:</b> manutencao, estrutura</li>
+    </ul>
+    <ul class="ev"><li><b>manutencao:</b> 9 manutenção(ões) aberta(s) no Sapron em 6 imóvel(is)</li><li><b>estrutura:</b> Operação local no Score entre os 10% piores (15,2)</li></ul>
+  </details>
+</article>
+<article class="fr">
+  <div class="rank">16</div>
+  <div class="quem">
+    <h3>Jhenyffer Paola Ramos da Silva</h3>
+    <p class="cod">URU-003-ABR · host 263 · 33 dias em Aguardando aprovação</p>
+    <p class="por">Saiu da régua: Score voltou de 77,3 para 105,4.</p>
+    <p class="mudou">Entrou por Score Regular e queda de 18,4 pontos. Hoje tem 1 imóvel crítico em 38 e nenhuma ocorrência nos últimos 30 dias (eram 5 nos 30 anteriores). A melhora é de um mês de Score; confirmar com o de novembro.</p>
+  </div>
+  <dl class="num">
+    <div><dt>Score de outubro</dt><dd>105,4 <span class="var sobe">+28,1</span></dd><dd class="sub">Excelente</dd></div>
+    <div><dt>Imóveis críticos</dt><dd>1 de 38</dd><dd class="sub">2,6% da carteira</dd></div>
+    <div><dt>Manutenções abertas</dt><dd>4</dd><dd class="sub">0,13 por imóvel</dd></div>
+    <div><dt>Alerta hoje</dt><dd class="alerta off">Sem alerta</dd></div>
+  </dl>
+  <details>
+    <summary>Ver detalhe</summary>
+    <ul>
+      <li><b>Entrou por:</b> Score Regular (77,3) · Score caiu 18,4 pts no mês (em Aguardando aprovação desde 23/10)</li>
+      <li><b>Score nos últimos meses:</b> 97,4 → 95,7 → 77,3 → 105,4 (classe em outubro: Excelente)</li>
+      <li><b>Manutenção:</b> 0 há mais de 30 dias; 0 com status urgente; 2 esperando aprovação da Seazone (fora da conta)</li>
+      <li><b>Ocorrências em 90 dias:</b> 5 <small>(0 nos últimos 30 dias, 5 nos 30 anteriores)</small> · graves 4 · gravíssimas 0</li>
+      <li><b>Notas:</b> Airbnb no mês 4,97 · Airbnb em 90 dias 4,90 · limpeza 5,00 · check-in 4,90 · Booking 4,92</li>
+      <li><b>Stop de crescimento:</b> sem stop ativo</li>
+      <li><b>Planos que o diagnóstico da Central sugere:</b> manutencao, ocorrencias</li>
+    </ul>
+    <ul class="ev"><li><b>manutencao:</b> 5 manutenção(ões) aberta(s) no Sapron em 5 imóvel(is)</li><li><b>ocorrencias:</b> 4 ocorrências graves em 90 dias</li></ul>
+  </details>
+</article>
+<article class="fr">
+  <div class="rank">17</div>
+  <div class="quem">
+    <h3>Lucilene Cora</h3>
+    <p class="cod">BPS-005-CEN · host 216 · 33 dias em Aguardando aprovação · reincidente</p>
+    <p class="por">Saiu da régua: Score Excelente e subindo.</p>
+    <p class="mudou">Entrou por recaída depois da Pré-UTI, com queda de 10,4 pontos. Hoje o Score é 108,4, com 3 críticos em 41 e 3 manutenções abertas, uma delas marcada como urgente desde 17/11. Reincidente.</p>
+  </div>
+  <dl class="num">
+    <div><dt>Score de outubro</dt><dd>108,4 <span class="var sobe">+6,1</span></dd><dd class="sub">Excelente</dd></div>
+    <div><dt>Imóveis críticos</dt><dd>3 de 41</dd><dd class="sub">7,3% da carteira</dd></div>
+    <div><dt>Manutenções abertas</dt><dd>3</dd><dd class="sub">0,07 por imóvel</dd></div>
+    <div><dt>Alerta hoje</dt><dd class="alerta off">Sem alerta</dd></div>
+  </dl>
+  <details>
+    <summary>Ver detalhe</summary>
+    <ul>
+      <li><b>Entrou por:</b> Recaída depois da Pré-UTI · Score caiu 10,4 pts no mês (em Aguardando aprovação desde 23/10)</li>
+      <li><b>Score nos últimos meses:</b> 112,7 → 112,7 → 102,3 → 108,4 (classe em outubro: Excelente)</li>
+      <li><b>Manutenção:</b> 0 há mais de 30 dias; 0 com status urgente; 0 esperando aprovação da Seazone (fora da conta)</li>
+      <li><b>Ocorrências em 90 dias:</b> 1 <small>(0 nos últimos 30 dias, 1 nos 30 anteriores)</small> · graves 0 · gravíssimas 0</li>
+      <li><b>Notas:</b> Airbnb no mês 4,69 · Airbnb em 90 dias 4,73 · limpeza 4,82 · check-in 4,87 · Booking não medido</li>
+      <li><b>Stop de crescimento:</b> sem stop ativo</li>
+      <li><b>Planos que o diagnóstico da Central sugere:</b> manutencao</li>
+    </ul>
+    <ul class="ev"><li><b>manutencao:</b> 3 manutenção(ões) aberta(s) no Sapron em 3 imóvel(is) (1 urgente(s)); 1 imóvel(is) com manutenção urgente aberta há mais de 7 dias</li></ul>
+  </details>
+</article></section>
+<footer class="pe">
+  <div><h2>Como ler</h2><ul>
+    <li><b>Imóvel crítico:</b> nota do anúncio no Airbnb abaixo de 4,6 com 3 avaliações ou mais.</li>
+    <li><b>Manutenções abertas:</b> cards em aberto nos imóveis que a franquia opera hoje. Os que esperam aprovação da Seazone ficam fora da conta.</li>
+    <li><b>Alerta:</b> régua da Central desde 19/10. Acende com Score Ruim ou Regular, queda de 10 pontos ou mais, 20% da carteira crítica, 20 manutenções e 2 vezes a média da rede, ou 2 gravíssimas. Com Score Excelente a régua sobe para 30% e 3 vezes.</li>
+    <li><b>Ordem:</b> dentro de cada grupo, do caso mais forte para o mais fraco. É leitura do Backoffice, não regra do sistema.</li>
+  </ul></div>
+  <div><h2>O que não foi medido</h2><ul>
+    <li>O Score de novembro ainda não fechou. O de outubro pode não refletir o que a franquia fez neste mês.</li>
+    <li>Carteira crítica, ocorrências e notas vêm do robô da Central e não foram refeitas em outra fonte.</li>
+    <li>O que já foi cobrado de cada franquia em mensagens e reuniões. No histórico da Central, o único e-mail de Pré-UTI registrado em parte delas é o de teste, interno: a confirmar se a franquia foi avisada.</li>
+    <li>A média de manutenção da rede subiu de cerca de 0,20 para 0,35 por imóvel em um mês. Parte da melhora em "vezes a rede" vem disso, não da franquia.</li>
+    <li>A régua conta manutenção herdada de franquia em distrato. Contando só as próprias, Diego e Laura não teriam alerta.</li>
+    <li>Capacidade: a UTI comporta 5 franquias entre Comunicado, Plano e Resultado, e hoje 4 estão nessas etapas.</li>
+  </ul></div>
+</footer>
+</div></body></html>
